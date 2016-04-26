@@ -10,7 +10,7 @@
 namespace Manteca_Box_develop {
     
     
-    public partial class Formulario_web1 {
+    public partial class Login {
         
         /// <summary>
         /// Control username_login_input.

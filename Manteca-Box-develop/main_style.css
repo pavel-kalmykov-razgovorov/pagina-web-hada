@@ -1,0 +1,33 @@
+.demo-card-wide.mdl-card {
+	width: 90%;
+	display: block;
+	margin: 5em auto;
+}
+
+.mdl-list__item {
+	padding: 0 0 0 1em;
+}
+
+.demo-card-wide > .mdl-card__title {
+	color: #fff;
+	background: #26A69A;
+	/*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
+}
+
+.demo-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+
+.boton-examinar {
+	margin-left: 40px;
+}
+
+.text-escoge {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-family:Roboto;
+}
+
+.botton-subir {
+	margin-top: 10px;
+}

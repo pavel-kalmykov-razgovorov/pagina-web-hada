@@ -10,7 +10,7 @@
 namespace Manteca_Box_develop {
     
     
-    public partial class WebForm1 {
+    public partial class Registro {
         
         /// <summary>
         /// Control user_name_register.

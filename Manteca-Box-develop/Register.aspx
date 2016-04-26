@@ -1,27 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Manteca_Box_develop.WebForm1" %>
+﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Manteca_Box_develop.Registro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .demo-card-wide.mdl-card {
-            width: 90%;
-            display: block;
-            margin: 5em auto;
-        }
-
-        .demo-card-wide > .mdl-card__title {
-            color: #fff;
-            height: 176px;
-            background: #26A69A;
-            /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
-        }
-
-        .demo-card-wide > .mdl-card__menu {
-            color: #fff;
-        }
-    </style>
-
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
             <h1 class="mdl-card__title-text">¡Registrate en MantecaBox!</h1>
@@ -77,7 +58,7 @@
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                <b>Iniciar Sesión</b>
+                <b>Registrar</b>
             </button>
         </div>
     </div>
