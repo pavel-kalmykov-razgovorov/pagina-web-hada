@@ -31,6 +31,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUserName;
         
         /// <summary>
+        /// Control RegExUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExUsuario;
+        
+        /// <summary>
         /// Control correo_register.
         /// </summary>
         /// <remarks>
@@ -92,5 +101,14 @@ namespace Manteca_Box_develop {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcontraseña2;
+        
+        /// <summary>
+        /// Control ComprobarIgualdadConstraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator ComprobarIgualdadConstraseña;
     }
 }

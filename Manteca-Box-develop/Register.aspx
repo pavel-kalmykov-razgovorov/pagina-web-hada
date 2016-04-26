@@ -17,6 +17,7 @@
                             <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="user_name_register" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten carácteres especiales" ControlToValidate="user_name_register" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
@@ -51,6 +52,7 @@
                             <!--<input class="mdl-textfield__input" type="password" id="userpass-login-input">-->
                             <label class="mdl-textfield__label" for="userpass-login-input">Repite contraseña</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorcontraseña2" runat="server" ErrorMessage="Confirma la contraseña" ControlToValidate="password_register2" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="ComprobarIgualdadConstraseña" runat="server" ErrorMessage="La contraseña no coincide" ControlToCompare="password_register1" ControlToValidate="password_register2" CssClass="mdl-textfield__error"></asp:CompareValidator>
                         </span>
                     </span>
                 </li>
