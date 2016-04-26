@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Manteca_Box_develop.Formulario_web1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Manteca_Box_develop.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -10,9 +10,12 @@
             margin: 5em auto;
         }
 
+        .mdl-list__item {
+            padding: 0 0 0 16px;
+        }
+
         .demo-card-wide > .mdl-card__title {
             color: #fff;
-            height: 176px;
             background: #26A69A;
             /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
         }
