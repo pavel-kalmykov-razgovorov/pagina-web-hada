@@ -1,0 +1,3 @@
+C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-Class\obj\Debug\Manteca-Box-Class.csprojResolveAssemblyReference.cache
+C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-Class\obj\Debug\Manteca_Box_Class.Properties.Resources.resources
+C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-Class\obj\Debug\Manteca-Box-Class.csproj.GenerateResource.Cache
