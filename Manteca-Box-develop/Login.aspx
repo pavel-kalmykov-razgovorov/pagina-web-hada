@@ -1,30 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Manteca_Box_develop.Login" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Manteca_Box_develop.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .demo-card-wide.mdl-card {
-            width: 90%;
-            display: block;
-            margin: 5em auto;
-        }
-
-        .mdl-list__item {
-            padding: 0 0 0 16px;
-        }
-
-        .demo-card-wide > .mdl-card__title {
-            color: #fff;
-            background: #26A69A;
-            /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
-        }
-
-        .demo-card-wide > .mdl-card__menu {
-            color: #fff;
-        }
-    </style>
-
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
             <h1 class="mdl-card__title-text">¡Bienvenido! Nos alegramos de verte</h1>
@@ -59,39 +37,4 @@
             </button>
         </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
 </asp:Content>
