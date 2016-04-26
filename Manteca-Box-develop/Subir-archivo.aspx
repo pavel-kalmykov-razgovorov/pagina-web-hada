@@ -12,16 +12,15 @@
                 <label>Escoge el archivo a subir:</label>
             </div>
             <div>
-                <form action="subir.php" enctype="multipart/form-data" method="post">
-                    <ul>
-                        <li style="list-style:none">
-                            <input type="file" name="fichero">
-                        </li>
-                        <li class="botton-subir" style="list-style:none">
-                             <input type="submit" value="Subir">
-                        </li>
-                    </ul>
-                </form>     
+                <ul>
+                    <li class="botton-Examinar" style="list-style:none">
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <!--<input type="submit" value="Subir">-->
+                    </li>
+                    <li class="botton-subir" style="list-style:none">
+                        <asp:Button ID="Button1" runat="server" Text="Subir" />
+                    </li>
+                </ul>    
              </div>
         </div>
     </div>
