@@ -28,3 +28,9 @@ C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-develop\obj\Debug\Ma
 C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-develop\bin\Manteca-Box-develop.dll.config
 C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-develop\bin\Manteca-Box-develop.dll
 C:\Users\Jordi\Documents\pagina-web-hada-master\Manteca-Box-develop\bin\Manteca-Box-develop.pdb
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-develop.dll.config
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-develop.dll
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-develop.pdb
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.csprojResolveAssemblyReference.cache
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.dll
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.pdb
