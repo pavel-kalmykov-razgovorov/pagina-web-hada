@@ -32,6 +32,40 @@
 	margin-top: 1em;
 }
 
-#ContentPlaceHolder1_RegExUsuarioMaxLength {
+.demo-card-wide.mdl-card {
+    width: 90%;
+    display: block;
+    margin: 5em auto;
+}
 
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    background: #26A69A;
+    /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
+}
+
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.boton-examinar {
+    margin-left: 40px;
+}
+
+.text-escoge {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family:Roboto;
+}
+
+.botton-subir {
+    margin-top: 10px;
+}
+
+.mdl-layout__header {
+    background: #26A69A;
+}
+
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
+    padding-right: 0;
 }

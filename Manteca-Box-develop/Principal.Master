@@ -19,32 +19,19 @@
     <form id="form1" runat="server">
         <div>
             <!-- Uses a header that contracts as the page scrolls down. -->
-            <style>
-                .mdl-layout__header {
-                    background: #26A69A;
-                }
-
-                .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
-                    padding-right: 0;
-                }
-            </style>
-
             <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
                 <header class="mdl-layout__header mdl-layout__header--waterfall">
                     <!-- Top row, always visible -->
                     <div class="mdl-layout__header-row">
                         <!-- Title -->
-                        <span class="mdl-layout-title">Manteca-Box</span>
+                        <span class="mdl-layout-title">MantecaBox</span>
                         <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                  mdl-textfield--floating-label mdl-textfield--align-right">
-                            <label class="mdl-button mdl-js-button mdl-button--icon"
-                                for="waterfall-exp">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                            <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
                                 <i class="material-icons">search</i>
                             </label>
                             <div class="mdl-textfield__expandable-holder">
-                                <input class="mdl-textfield__input" type="search" name="sample" autocomplete="off"
-                                    id="waterfall-exp">
+                                <input class="mdl-textfield__input" type="search" name="sample" autocomplete="off" id="waterfall-exp">
                             </div>
                         </div>
                     </div>
