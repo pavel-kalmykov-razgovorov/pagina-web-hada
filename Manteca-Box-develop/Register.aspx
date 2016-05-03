@@ -17,19 +17,19 @@
                             <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="user_name_register" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten caracteres especiales" ControlToValidate="user_name_register" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten caracteres especiales" ControlToValidate="user_name_register" ValidationExpression="\w+" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
-                 <li class="mdl-list__item">
+                <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
                         <i class="material-icons  mdl-list__item-avatar">email</i>
                         <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <asp:TextBox ID="correo_register" runat="server" CssClass="mdl-textfield__input" ></asp:TextBox>
+                            <asp:TextBox ID="correo_register" runat="server" CssClass="mdl-textfield__input"></asp:TextBox>
                             <!--<input class="mdl-textfield__input" type="password" id="userpass-login-input">-->
                             <label class="mdl-textfield__label" for="userpass-login-input">Email</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorcorreo" runat="server" ControlToValidate="correo_register" ErrorMessage="Introduce el email" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" ControlToValidate="correo_register" ErrorMessage="Esto no es un email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" ControlToValidate="correo_register" ErrorMessage="Esto no es un email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
