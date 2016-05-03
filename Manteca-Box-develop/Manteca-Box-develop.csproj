@@ -65,6 +65,7 @@
     <Content Include="main_style.css" />
     <Content Include="Register.aspx" />
     <Content Include="Principal.Master" />
+    <Content Include="ManagerRegister.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="Subir-archivo.aspx.designer.cs">
       <DependentUpon>Subir-archivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRegister.aspx.cs">
+      <DependentUpon>ManagerRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagerRegister.aspx.designer.cs">
+      <DependentUpon>ManagerRegister.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
