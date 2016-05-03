@@ -123,6 +123,12 @@
       <DependentUpon>ManagerRegister.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Manteca-Box-Class\Manteca-Box-Class.csproj">
+      <Project>{1f0e20fc-e1a5-4d9e-86e3-f9214870df28}</Project>
+      <Name>Manteca-Box-Class</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

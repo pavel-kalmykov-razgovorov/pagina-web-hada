@@ -60,9 +60,10 @@
             </ul>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-            <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="Button_Register">
+            <asp:Button ID="Button_Register" runat="server" Text="Registrar" OnClick="Button_Register_Click" CssClass="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" />
+            <!--<button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="Button_Register" onclick="Button_Register_Click">
                 <b>Registrar</b>
-            </button>
+            </button>-->
         </div>
     </div>
 </asp:Content>
