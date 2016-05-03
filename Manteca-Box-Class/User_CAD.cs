@@ -119,12 +119,12 @@ namespace User_CAD_Class
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Friends where", c);//Acabar
+            SqlCommand com = new SqlCommand("Select * from Friends where Friends.User1 = ", c);//Pasar argumento 
             SqlDataReader dr = com.ExecuteReader();
 
             while (dr.Read())
             {
-                lista.Add(dr["Users1"].ToString());
+                lista.Add(dr["Users2"].ToString());
             }
             dr.Close();
             c.Close();
