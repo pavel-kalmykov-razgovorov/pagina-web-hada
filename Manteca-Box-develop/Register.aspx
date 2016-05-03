@@ -17,7 +17,7 @@
                             <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="user_name_register" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten carácteres especiales" ControlToValidate="user_name_register" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten caracteres especiales" ControlToValidate="user_name_register" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
