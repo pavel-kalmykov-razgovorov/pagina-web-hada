@@ -85,6 +85,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcontraseña1;
         
         /// <summary>
+        /// Control RegExLongitudContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExLongitudContraseña;
+        
+        /// <summary>
         /// Control password_register2.
         /// </summary>
         /// <remarks>

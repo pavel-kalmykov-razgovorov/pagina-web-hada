@@ -17,7 +17,7 @@
                             <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="user_name_register" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="* No se permiten caracteres especiales" ControlToValidate="user_name_register" ValidationExpression="\w+" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="user_name_register" ValidationExpression="\w{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
@@ -41,6 +41,7 @@
                             <!--<input class="mdl-textfield__input" type="password" id="userpass-login-input">-->
                             <label class="mdl-textfield__label" for="userpass-login-input">Contraseña</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorcontraseña1" runat="server" ErrorMessage="Introduce la contraseña" ControlToValidate="password_register1" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegExLongitudContraseña" runat="server" ErrorMessage="Debe de tener entre 4 y 30 caracteres" ControlToValidate="password_register1" ValidationExpression="\S{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>

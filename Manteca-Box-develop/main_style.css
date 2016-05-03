@@ -5,7 +5,7 @@
 }
 
 .mdl-list__item {
-	padding: 0 0 0 1em;
+	padding: 0 0 .5em 1em;
 }
 
 .demo-card-wide > .mdl-card__title {
@@ -30,4 +30,8 @@
 
 .botton-subir {
 	margin-top: 1em;
+}
+
+#ContentPlaceHolder1_RegExUsuarioMaxLength {
+
 }
