@@ -40,8 +40,8 @@
                         <div class="mdl-layout-spacer"></div>
                         <!-- Navigation -->
                         <nav class="mdl-navigation">
-                            <a class="mdl-navigation__link" href="#">Explorar</a>
-                            <a class="mdl-navigation__link" href="#">Historial</a>
+                            <a class="mdl-navigation__link" href="Login.aspx">Iniciar Sesión</a>
+                            <a class="mdl-navigation__link" href="Register.aspx">Registrarse</a>
                         </nav>
                     </div>
                 </header>
