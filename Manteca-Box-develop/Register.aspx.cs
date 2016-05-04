@@ -33,22 +33,20 @@ namespace Manteca_Box_develop
             {
                 MailAddress fromAddress = new MailAddress("pepesifre@gmail.com");
                 MailAddress toAddress = new MailAddress(correo_register.Text);
-                //message.ANachments.Add(new ANachment("C:\\imagen1.gif")); 
-                //message.ANachments.Add(new ANachment("C:\\imagen2.jpg")); 
                 message.From = fromAddress;
                 message.To.Add(toAddress);
                 message.Subject = "Activacion de la cuenta";
 
                 //Que nos lleve a confirmacion REgistro
-                string userActiviation = "http://solution.es/useractivation.aspx?email=" + correo_register.Text;
+                string userActiviation = "http://127.0.0.1:5293/ConfirmacionRegistro.aspx?email=" + correo_register.Text;
 
-                message.Body = "hi" + user_name_register.Text + "<br> click here to confirm your account</br> <a href = '" + userActiviation + "'> click Here </a>";
+                message.Body = "Hi " + user_name_register.Text + "<br> click here to confirm your account</br> <a href = \"" + userActiviation + "\"> click Here </a>";
                 message.IsBodyHtml = true;
-                smtpClient.EnableSsl = true;
                 //smtpClient.UseDefaultCredentials = true;
 
 
                 smtpClient.Credentials = new System.Net.NetworkCredential("pepesifre@gmail.com", "8DC03NEBsaj");
+                smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
                 Response.Write("Correcto email");
             }
