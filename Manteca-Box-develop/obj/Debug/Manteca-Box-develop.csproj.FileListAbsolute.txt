@@ -34,5 +34,5 @@ C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-B
 C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.csprojResolveAssemblyReference.cache
 C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.dll
 C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\obj\Debug\Manteca-Box-develop.pdb
-C:\Users\pavel\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-Class.exe
-C:\Users\pavel\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-Class.pdb
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-Class.exe
+C:\Users\Pepe\Documents\GitHub\pagina-web-hada\Manteca-Box-develop\bin\Manteca-Box-Class.pdb

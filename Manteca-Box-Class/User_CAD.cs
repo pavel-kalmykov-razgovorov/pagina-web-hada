@@ -34,7 +34,7 @@ namespace User_CAD_Class
 
                 com.ExecuteNonQuery();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {  }
             finally { nueva_conexion.Close(); }
         }
 
@@ -119,7 +119,7 @@ namespace User_CAD_Class
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Friends where Friends.User1 = ", c);//Pasar argumento 
+            SqlCommand com = new SqlCommand("Select * from Friends where Friends.User1 = ", c);
             SqlDataReader dr = com.ExecuteReader();
 
             while (dr.Read())
@@ -130,6 +130,24 @@ namespace User_CAD_Class
             c.Close();
 
             return lista;
+        }
+
+        public void confirmacionUser(User_EN u)
+        {
+            SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
+
+            try
+            {
+                nueva_conexion.Open();
+                string update = "";
+                update = "Update Users set verified = '1' where Users.email = '" + u.Correo + "'"; 
+                SqlCommand com = new SqlCommand(update, nueva_conexion);
+
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally { nueva_conexion.Close(); }
         }
 
         public void addLike()
