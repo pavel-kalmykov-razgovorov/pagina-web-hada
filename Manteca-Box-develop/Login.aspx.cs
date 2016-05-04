@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using User_EN_Class;
 
 namespace Manteca_Box_develop
 {
@@ -11,8 +7,15 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.username_login_input.Text = "Prueba C#";
             
+        }
+
+        protected void Button_Login_Click(object sender, EventArgs e)
+        {
+            User_EN user = new User_EN();
+            user.NombreUsu = username_login_input.Text;
+            user.Contraseña = password_login_input.Text;
+            //user.BuscarUsuario();
         }
     }
 }
