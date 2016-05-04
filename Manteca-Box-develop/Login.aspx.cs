@@ -15,7 +15,15 @@ namespace Manteca_Box_develop
             User_EN user = new User_EN();
             user.NombreUsu = username_login_input.Text;
             user.Contraseña = password_login_input.Text;
-            //user.BuscarUsuario();
+            if(user.BuscarUsuario())
+            {
+                user.MostrarUsuario();
+                Session["user_session_data"] = user;
+            }
+            else
+            {
+                //Mostrar error de que el usuario no existe
+            }
         }
     }
 }

@@ -97,7 +97,7 @@ namespace User_CAD_Class
             {
                 nueva_conexion.Open();
                 string select = "";
-                select = "Select id from Users where Users.ID =" + u.ID;
+                select = "Select id from Users where username ='" + u.NombreUsu + "' and password = '" + u.Contraseña + "'";
                 SqlCommand com = new SqlCommand(select, nueva_conexion);
                 SqlDataReader dr = com.ExecuteReader();
 
