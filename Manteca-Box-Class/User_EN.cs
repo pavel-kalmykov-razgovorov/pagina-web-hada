@@ -88,6 +88,14 @@ namespace User_EN_Class
             set { visibilidad_perfil = value; }
         }
 
+        private short verified;
+
+        public short Verified
+        {
+            get { return verified; }
+            set { verified = value; }
+        }
+
         public void InsertarUsuario()
         {
             User_CAD userCad = new User_CAD();
@@ -122,6 +130,12 @@ namespace User_EN_Class
             a = c.ListarAmigos();
 
             return a;
+        }
+
+        public bool confirmacionUsuario()
+        {
+            User_CAD confirmUser = new User_CAD();
+            confirmUser.confirmacionUser(this);
         }
 
         public void AñadirLike()

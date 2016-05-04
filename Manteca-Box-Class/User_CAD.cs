@@ -132,6 +132,24 @@ namespace User_CAD_Class
             return lista;
         }
 
+        public void confirmacionUser(User_EN u)
+        {
+            SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
+
+            try
+            {
+                nueva_conexion.Open();
+                string update = "";
+                update = "Update Users set verified = '1' where Users.email = '" + u.Correo + "'"; 
+                SqlCommand com = new SqlCommand(update, nueva_conexion);
+
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally { nueva_conexion.Close(); }
+        }
+
         public void addLike()
         {
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using User_EN_Class;
 
 namespace Manteca_Box_develop
 {
@@ -16,8 +17,10 @@ namespace Manteca_Box_develop
             {
                 if (Request.QueryString.Keys[0] == "email")
                 {
+                    User_EN en = new User_EN();
                     string email = Request.QueryString["email"].ToString();
-                    string QueryActivate = "Update Users set verified = '1' where email = '" + email + "'";
+                    en.Correo = email;
+                    en.confirmacionUsuario();
 
                     //LLamar a un en o cad con esta sentencia, para que modifique la columna verified
                 }
