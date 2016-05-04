@@ -136,6 +136,7 @@ namespace User_EN_Class
         {
             User_CAD confirmUser = new User_CAD();
             confirmUser.confirmacionUser(this);
+            return true;
         }
 
         public void AñadirLike()

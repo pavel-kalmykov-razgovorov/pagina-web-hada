@@ -15,8 +15,11 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection c = new SqlConnection("data source=(LocalDB)\\v11.0;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=true");
-            SqlConnection c2 = new SqlConnection("data source=.\\SQLEXPRESS;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=true");
+            /*String s = "data source=(LocalDB)\\v11.0;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=SSPI;";
+            String s2 = "data source=.\\SQLEXPRESS;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=SSPI;";
+            SqlConnection c = new SqlConnection(s);
+            SqlConnection c2 = new SqlConnection(s2);
+            c.Open();*/
         }
 
         protected void Button_Register_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace Manteca_Box_develop
             en.NombreUsu = user_name_register.Text;
             en.Correo = correo_register.Text;
             en.Contraseña = password_register1.Text;
-            //en.InsertarUsuario();
+            en.InsertarUsuario();
 
             //IF se ha insertado::
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
