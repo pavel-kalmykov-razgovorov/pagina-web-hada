@@ -66,6 +66,7 @@
     <Content Include="Register.aspx" />
     <Content Include="Principal.Master" />
     <Content Include="ManagerRegister.aspx" />
+    <Content Include="ConfirmacionRegistro.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="ManagerRegister.aspx.designer.cs">
       <DependentUpon>ManagerRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacionRegistro.aspx.cs">
+      <DependentUpon>ConfirmacionRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionRegistro.aspx.designer.cs">
+      <DependentUpon>ConfirmacionRegistro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

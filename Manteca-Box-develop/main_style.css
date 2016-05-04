@@ -69,3 +69,11 @@
 .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
     padding-right: 0;
 }
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+    display: inline-block;
+}
+
+.mdl-navigation__link i {
+    padding-right: .5em;
+}
