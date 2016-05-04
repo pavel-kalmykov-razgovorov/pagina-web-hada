@@ -34,7 +34,7 @@ namespace User_CAD_Class
 
                 com.ExecuteNonQuery();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {  }
             finally { nueva_conexion.Close(); }
         }
 
@@ -119,7 +119,7 @@ namespace User_CAD_Class
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Friends where Friends.User1 = ", c);//Pasar argumento 
+            SqlCommand com = new SqlCommand("Select * from Friends where Friends.User1 = ", c);
             SqlDataReader dr = com.ExecuteReader();
 
             while (dr.Read())
