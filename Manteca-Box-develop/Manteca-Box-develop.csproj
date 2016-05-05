@@ -61,6 +61,7 @@
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
+    <Content Include="Editar-Perfil.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="main_style.css" />
     <Content Include="Register.aspx" />
@@ -80,6 +81,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editar-Perfil.aspx.cs">
+      <DependentUpon>Editar-Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editar-Perfil.aspx.designer.cs">
+      <DependentUpon>Editar-Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
