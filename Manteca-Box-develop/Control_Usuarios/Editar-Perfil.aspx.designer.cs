@@ -103,6 +103,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Edad;
         
         /// <summary>
+        /// Control RangoEdadValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangoEdadValidator;
+        
+        /// <summary>
         /// Control Editar_Perfil_Hombre.
         /// </summary>
         /// <remarks>
@@ -145,7 +154,25 @@ namespace Manteca_Box_develop {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Editar_Perfil_Visibilidad;
+        protected global::System.Web.UI.WebControls.Label Editar_Perfil_Visibilidad;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Visibilidad_Switch.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox Editar_Perfil_Visibilidad_Switch;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Visibilidad_Label.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Editar_Perfil_Visibilidad_Label;
         
         /// <summary>
         /// Control Editar_Perfil_Editar.

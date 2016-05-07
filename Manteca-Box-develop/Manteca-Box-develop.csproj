@@ -61,12 +61,11 @@
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
-    <Content Include="Editar-Perfil.aspx" />
+    <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="main_style.css" />
-    <Content Include="Register.aspx" />
+    <Content Include="styles\main_style.css" />
+    <Content Include="Control_Usuarios\Register.aspx" />
     <Content Include="Principal.Master" />
-    <Content Include="ManagerRegister.aspx" />
     <Content Include="ConfirmacionRegistro.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -76,16 +75,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Login.aspx" />
+    <Content Include="Control_Usuarios\Login.aspx" />
     <Content Include="Subir-archivo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Editar-Perfil.aspx.cs">
+    <Compile Include="Control_Usuarios\Editar-Perfil.aspx.cs">
       <DependentUpon>Editar-Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Editar-Perfil.aspx.designer.cs">
+    <Compile Include="Control_Usuarios\Editar-Perfil.aspx.designer.cs">
       <DependentUpon>Editar-Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
@@ -95,18 +94,18 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Register.aspx.cs">
+    <Compile Include="Control_Usuarios\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
+    <Compile Include="Control_Usuarios\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Control_Usuarios\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Control_Usuarios\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,13 +122,6 @@
     </Compile>
     <Compile Include="Subir-archivo.aspx.designer.cs">
       <DependentUpon>Subir-archivo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerRegister.aspx.cs">
-      <DependentUpon>ManagerRegister.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManagerRegister.aspx.designer.cs">
-      <DependentUpon>ManagerRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmacionRegistro.aspx.cs">
       <DependentUpon>ConfirmacionRegistro.aspx</DependentUpon>

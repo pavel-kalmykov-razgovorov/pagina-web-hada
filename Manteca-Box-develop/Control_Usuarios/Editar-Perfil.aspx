@@ -48,6 +48,7 @@
                         <span class="mdl-textfield mdl-js-textfield">
                             <asp:TextBox ID="Editar_Perfil_Edad" runat="server" TextMode="Number" CssClass="mdl-textfield__input"></asp:TextBox>
                             <label class="mdl-textfield__label" for="ContentPlaceHolder1_Editar_Perfil_Edad"></label>
+                            <asp:RangeValidator ID="RangoEdadValidator" runat="server" ErrorMessage="Edad incorrecta" MinimumValue="0" MaximumValue="100" Type="Integer" ControlToValidate="Editar_Perfil_Edad" CssClass="mdl-textfield__error"></asp:RangeValidator>
                         </span>
                     </span>
                 </li>
@@ -55,15 +56,15 @@
                     <span class="mdl-list__item-primary-content" id="Editar_Perfil_Genero">
                         <label class="etiqueta-editar-perfil">Género:</label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ContentPlaceHolder1_Editar_Perfil_Hombre">
-                            <asp:RadioButton ID="Editar_Perfil_Hombre" runat="server" CssClass="mdl-radio__button" />
+                            <asp:RadioButton ID="Editar_Perfil_Hombre" runat="server" GroupName="genero" />
                             <span class="mdl-radio__label">Hombre</span>
                         </label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ContentPlaceHolder1_Editar_Perfil_Mujer">
-                            <asp:RadioButton ID="Editar_Perfil_Mujer" runat="server" CssClass="mdl-radio__button" />
+                            <asp:RadioButton ID="Editar_Perfil_Mujer" runat="server" GroupName="genero" />
                             <span class="mdl-radio__label">Mujer</span>
                         </label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ContentPlaceHolder1_Editar_Perfil_NoMostrar">
-                            <asp:RadioButton ID="Editar_Perfil_NoMostrar" runat="server" CssClass="mdl-radio__button" />
+                            <asp:RadioButton ID="Editar_Perfil_NoMostrar" runat="server" GroupName="genero" Checked="true" />
                             <span class="mdl-radio__label">No mostrar</span>
                         </label>
                     </span>
@@ -80,10 +81,10 @@
                 <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
                         <label class="etiqueta-editar-perfil">Visibilidad de perfil:</label>
-                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ContentPlaceHolder1_Editar_Perfil_Visibilidad">
-                            <asp:CheckBox ID="Editar_Perfil_Visibilidad" runat="server" CssClass="mdl-switch__input" />
-                            <span class="mdl-switch__label">Pública</span>
-                        </label>
+                        <asp:Label ID="Editar_Perfil_Visibilidad" AssociatedControlID="Editar_Perfil_Visibilidad_Switch" runat="server" CssClass="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                            <asp:CheckBox ID="Editar_Perfil_Visibilidad_Switch" runat="server"/>
+                            <asp:Label ID="Editar_Perfil_Visibilidad_Label" runat="server" Text="Privado" CssClass="mdl-switch__label"></asp:Label>
+                        </asp:Label>
                     </span>
                 </li>
             </ul>
