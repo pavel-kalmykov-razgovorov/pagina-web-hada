@@ -22,6 +22,24 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.TextBox username_login_input;
         
         /// <summary>
+        /// Control RequiredFieldValidatorUserName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUserName;
+        
+        /// <summary>
+        /// Control RegExUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExUsuario;
+        
+        /// <summary>
         /// Control password_login_input.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace Manteca_Box_develop {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password_login_input;
+        
+        /// <summary>
+        /// Control RequiredFieldValidatorPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPassword;
         
         /// <summary>
         /// Control Button_Login.

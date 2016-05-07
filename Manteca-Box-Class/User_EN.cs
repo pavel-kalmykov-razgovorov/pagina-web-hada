@@ -139,6 +139,12 @@ namespace User_EN_Class
             return true;
         }
 
+        public void actualizarUsuario()
+        {
+            User_CAD actUser = new User_CAD();
+            actUser.actualizarUser(this);
+        }
+
         public void AñadirLike()
         {
             User_CAD addLike = new User_CAD();

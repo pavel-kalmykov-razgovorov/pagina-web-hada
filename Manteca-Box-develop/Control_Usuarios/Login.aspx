@@ -14,9 +14,9 @@
                         <i class="material-icons  mdl-list__item-avatar">person</i>
                         <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <asp:TextBox ID="username_login_input" runat="server" CssClass="mdl-textfield__input"></asp:TextBox>
-                            <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
-
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="username_login_input" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="username_login_input" ValidationExpression="\w{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
@@ -25,8 +25,8 @@
                         <i class="material-icons  mdl-list__item-avatar">vpn_key</i>
                         <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <asp:TextBox ID="password_login_input" runat="server" CssClass="mdl-textfield__input" TextMode="Password"></asp:TextBox>
-                            <!--<input class="mdl-textfield__input" type="password" id="userpass-login-input">-->
                             <label class="mdl-textfield__label" for="userpass-login-input">Contraseña</label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ErrorMessage="Introduce la contraseña" ControlToValidate="password_login_input" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
                         </span>
                     </span>
                 </li>
@@ -34,9 +34,6 @@
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <asp:Button ID="Button_Login" runat="server" Text="Iniciar Sesión" OnClick="Button_Login_Click" CssClass="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" />
-            <!--<button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                <b>Iniciar Sesión</b>
-            </button>-->
         </div>
     </div>
 </asp:Content>
