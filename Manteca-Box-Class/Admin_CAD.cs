@@ -30,16 +30,16 @@ namespace Admin_CAD_Class
             while (dr.Read())
             {
                 User_EN usuario = new User_EN();
-
-                usuario.ID = dr.GetInt32(0);
+                usuario.ID = (short)dr["ID"];
+                usuario.Correo = dr["email"].ToString();
                 usuario.Nombre = dr["nombre"].ToString();
                 usuario.NombreUsu = dr["username"].ToString();
-                usuario.Correo = dr["email"].ToString();
                 usuario.Contraseña = dr["password"].ToString();
-                usuario.Edad = dr.GetInt16(5);
-                usuario.Genero = dr.GetString(6)[0];
+                usuario.Edad = (short)dr["age"];
+                usuario.Genero = (bool?)dr["gender"];
                 usuario.Localidad = dr["locality"].ToString();
-                usuario.Visibilidad_perfil = dr.GetInt16(8);
+                usuario.Visibilidad_perfil = (bool)dr["profile_visibility"];
+                usuario.Verified = (bool)dr["verified"];
 
                 lista.Add(usuario);
             }

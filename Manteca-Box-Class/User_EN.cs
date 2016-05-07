@@ -64,9 +64,9 @@ namespace User_EN_Class
             set { edad = value; }
         }
 
-        private char genero;
+        private bool? genero;
 
-        public char Genero
+        public bool? Genero
         {
             get { return genero; }
             set { genero = value; }
@@ -80,17 +80,17 @@ namespace User_EN_Class
             set { localidad = value; }
         }
 
-        private short visibilidad_perfil;
+        private bool visibilidad_perfil;
 
-        public short Visibilidad_perfil
+        public bool Visibilidad_perfil
         {
             get { return visibilidad_perfil; }
             set { visibilidad_perfil = value; }
         }
 
-        private short verified;
+        private bool verified;
 
-        public short Verified
+        public bool Verified
         {
             get { return verified; }
             set { verified = value; }
@@ -177,9 +177,10 @@ namespace User_EN_Class
             correo = "";
             contraseña = "";
             edad = 0;
-            genero = '\0';
+            genero = null;
             localidad = "";
-            visibilidad_perfil = 0;
+            visibilidad_perfil = false;
+            verified = false;
         }
     }
 }
