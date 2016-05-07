@@ -72,6 +72,8 @@
 
 .etiqueta-editar-perfil {
     margin-right: 1em;
+    width: 6em;
+    text-align: right;
 }
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
     display: inline-block;
@@ -79,4 +81,8 @@
 
 .mdl-navigation__link i {
     padding-right: .5em;
+}
+
+#Editar_Perfil_Genero label.mdl-radio {
+    margin-right: .5em;
 }

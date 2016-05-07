@@ -16,16 +16,11 @@ namespace Manteca_Box_develop
             User_EN en = (User_EN) Session["user_session_data"];
             if (en != null)
             {
-                this.Age.Text = en.Edad.ToString();
-                this.correo_profile.Text = en.Correo;
-                this.password_profile1.Text = en.Contraseña;
-                this.user_name_profile.Text = en.NombreUsu;
-                this.Locality.Text = en.Localidad;
-                this.Visibility_profile.Text = en.Visibilidad_perfil.ToString();
+
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                //Response.Redirect("Login.aspx");
             }
         }
         protected void Button_Edit_Profile_Click(object sender, EventArgs e)
