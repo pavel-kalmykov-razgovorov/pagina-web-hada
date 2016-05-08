@@ -61,6 +61,8 @@
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
+    <Content Include="assets\icono-mb.png" />
+    <Content Include="assets\icono-mb.svg" />
     <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="styles\main_style.css" />
