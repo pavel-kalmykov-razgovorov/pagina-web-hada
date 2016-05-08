@@ -83,7 +83,8 @@ namespace File_CAD_Class
             {
                 nueva_conexion.Open();
                 string insert = "";
-                insert = "Insert Into Files(name,description,creation_date,owner,is_lastversion) VALUES ('" + f.Nombre + "','" + f.Fecha_modificacion + "','" + f.Propietario + ")";
+                insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
+                insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
 
 
@@ -122,7 +123,7 @@ namespace File_CAD_Class
 
         }
 
-
+       
 
     }
 }
