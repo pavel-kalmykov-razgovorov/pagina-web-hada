@@ -39,12 +39,12 @@ namespace Manteca_Box_develop
                 //Que nos lleve a confirmacion REgistro
                 string userActiviation = "http://127.0.0.1:5293/ConfirmacionRegistro.aspx?email=" + correo_register.Text;
 
-                message.Body = "Hi " + user_name_register.Text + "<br> click here to confirm your account</br> <a href = \"" + userActiviation + "\"> click Here </a>";
+                message.Body = "Hi " + user_name_register.Text + "<br> click here to confirm your account</br> <a href = " + userActiviation + "> click Here </a>";
                 message.IsBodyHtml = true;
                 //smtpClient.UseDefaultCredentials = true;
 
 
-                smtpClient.Credentials = new System.Net.NetworkCredential("pepesifre@gmail.com", "8DC03NEBsaj");
+                smtpClient.Credentials = new System.Net.NetworkCredential("pepesifre@gmail.com", "xxxx");
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
                 Response.Write("Correcto email");

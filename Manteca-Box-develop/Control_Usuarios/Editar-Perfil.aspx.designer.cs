@@ -13,6 +13,15 @@ namespace Manteca_Box_develop {
     public partial class Formulario_web1 {
         
         /// <summary>
+        /// Control Editar_Perfil_Usuario_Span.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Usuario_Span;
+        
+        /// <summary>
         /// Control Editar_Perfil_Usuario.
         /// </summary>
         /// <remarks>
@@ -40,22 +49,31 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExUsuario;
         
         /// <summary>
-        /// Control Editar_Perfil_Correo.
+        /// Control Editar_Perfil_Email_Span.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Correo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Email_Span;
         
         /// <summary>
-        /// Control RequiredFieldValidatorcorreo.
+        /// Control Editar_Perfil_Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcorreo;
+        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Email;
+        
+        /// <summary>
+        /// Control RequiredFieldValidatorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
         
         /// <summary>
         /// Control RegularExpressionValidatorEmail.
@@ -67,22 +85,31 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
         
         /// <summary>
-        /// Control Editar_Perfil_Contrasena.
+        /// Control Editar_Perfil_Contraseña_Span.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Contrasena;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Contraseña_Span;
         
         /// <summary>
-        /// Control RequiredFieldValidatorcontraseña1.
+        /// Control Editar_Perfil_Contraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcontraseña1;
+        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Contraseña;
+        
+        /// <summary>
+        /// Control RequiredFieldValidatorcontraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcontraseña;
         
         /// <summary>
         /// Control RegExLongitudContraseña.
@@ -92,6 +119,15 @@ namespace Manteca_Box_develop {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExLongitudContraseña;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Edad_Span.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Edad_Span;
         
         /// <summary>
         /// Control Editar_Perfil_Edad.
@@ -112,6 +148,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RangeValidator RangoEdadValidator;
         
         /// <summary>
+        /// Control Editar_Perfil_Hombre_Label.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Hombre_Label;
+        
+        /// <summary>
         /// Control Editar_Perfil_Hombre.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace Manteca_Box_develop {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton Editar_Perfil_Hombre;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Mujer_Label.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Mujer_Label;
         
         /// <summary>
         /// Control Editar_Perfil_Mujer.
@@ -130,6 +184,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RadioButton Editar_Perfil_Mujer;
         
         /// <summary>
+        /// Control Editar_Perfil_NoMostrar_Label.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_NoMostrar_Label;
+        
+        /// <summary>
         /// Control Editar_Perfil_NoMostrar.
         /// </summary>
         /// <remarks>
@@ -139,13 +202,22 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RadioButton Editar_Perfil_NoMostrar;
         
         /// <summary>
-        /// Control Edtiar_Perfil_Localidad.
+        /// Control Editar_Perfil_Localidad_Span.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Edtiar_Perfil_Localidad;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Localidad_Span;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Localidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Localidad;
         
         /// <summary>
         /// Control Editar_Perfil_Visibilidad.

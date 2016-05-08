@@ -49,18 +49,17 @@ namespace User_CAD_Class
             if (dr.Read())
             {
                 User_EN usuario = new User_EN();
-                usuario.ID = dr.GetInt32(0);
-                usuario.Correo = (dr["email"].ToString());
-                usuario.Nombre = (dr["nombre"].ToString());
-                usuario.NombreUsu = (dr["username"].ToString());
-                usuario.Contraseña = (dr["password"].ToString());
-                usuario.Edad = dr.GetInt16(5);
-                usuario.Genero = dr.GetString(6)[0];
+                usuario.ID = (short)dr["ID"];
+                usuario.Correo = dr["email"].ToString();
+                usuario.Nombre = dr["nombre"].ToString();
+                usuario.NombreUsu = dr["username"].ToString();
+                usuario.Contraseña = dr["password"].ToString();
+                usuario.Edad = (short)dr["age"];
+                usuario.Genero = (bool?)dr["gender"];
                 usuario.Localidad = dr["locality"].ToString();
-                usuario.Visibilidad_perfil = dr.GetInt16(8);
-
+                usuario.Visibilidad_perfil = (bool)dr["profile_visibility"];
+                usuario.Verified = (bool)dr["verified"];
                 lista.Add(usuario);
-
             }
             dr.Close();
             c.Close();
@@ -141,6 +140,24 @@ namespace User_CAD_Class
                 nueva_conexion.Open();
                 string update = "";
                 update = "Update Users set verified = '1' where Users.email = '" + u.Correo + "'"; 
+                SqlCommand com = new SqlCommand(update, nueva_conexion);
+
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally { nueva_conexion.Close(); }
+        }
+
+        public void actualizarUser(User_EN u)
+        {
+            SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
+
+            try
+            {
+                nueva_conexion.Open();
+                string update = "";
+                update = "Update Users set email = '" + u.Correo + "',nombre = '" + u.Nombre + "',username = '" + u.NombreUsu + "',password = '" + u.Contraseña + "',age = " + u.Edad + ",gender = '" + u.Genero + "',locality = '" + u.Localidad + "',profile_visibility = " + u.Visibilidad_perfil + ",verified = " + u.Verified + " where Users.ID = " + u.ID + "";
                 SqlCommand com = new SqlCommand(update, nueva_conexion);
 
 
