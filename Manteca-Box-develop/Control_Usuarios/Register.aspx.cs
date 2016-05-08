@@ -9,11 +9,6 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*String s = "data source=(LocalDB)\\v11.0;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=SSPI;";
-            String s2 = "data source=.\\SQLEXPRESS;AttachDBFilename=|DataDirectory|\\BBDD.mdf;Integrated Security=SSPI;";
-            SqlConnection c = new SqlConnection(s);
-            SqlConnection c2 = new SqlConnection(s2);
-            c.Open();*/
         }
 
         protected void Button_Register_Click(object sender, EventArgs e)
@@ -30,27 +25,27 @@ namespace Manteca_Box_develop
             MailMessage message = new MailMessage();
             try
             {
-                MailAddress fromAddress = new MailAddress("pepesifre@gmail.com");
+                MailAddress fromAddress = new MailAddress("mantecabox@gmail.com");
                 MailAddress toAddress = new MailAddress(correo_register.Text);
                 message.From = fromAddress;
                 message.To.Add(toAddress);
                 message.Subject = "Activacion de la cuenta";
 
                 //Que nos lleve a confirmacion REgistro
-                string userActiviation = "http://127.0.0.1:5293/ConfirmacionRegistro.aspx?email=" + correo_register.Text;
+                string userActiviation = Request.Url.GetLeftPart(UriPartial.Authority) + "/Control_Usuarios/ConfirmacionRegistro.aspx?email=" + correo_register.Text;
 
                 message.Body = "Hi " + user_name_register.Text + "<br> click here to confirm your account</br> <a href = " + userActiviation + "> click Here </a>";
                 message.IsBodyHtml = true;
                 //smtpClient.UseDefaultCredentials = true;
 
 
-                smtpClient.Credentials = new System.Net.NetworkCredential("pepesifre@gmail.com", "xxxx");
+                smtpClient.Credentials = new System.Net.NetworkCredential("mantecabox@gmail.com", "ElChiringuito");
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
                 Response.Write("Correcto email");
             }
             catch(Exception ex){
-                Response.Write("INCorrecto email");
+                Response.Write("Incorrecto email");
                 Response.Write(ex.GetBaseException());
                 //Label1.Text = "No se pudo enviar el mensaje!";
                 //e.GetBaseExceptio();

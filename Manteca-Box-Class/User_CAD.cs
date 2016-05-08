@@ -27,8 +27,10 @@ namespace User_CAD_Class
             try
             {
                 nueva_conexion.Open();
-                string insert = "";
-                insert = "Insert Into Users(email,nombre,username,password,age,gender,locality,profile_visibility) VALUES ('" + u.Correo + "','" + u.Nombre + "','" + u.NombreUsu + "','" + u.Contraseña + "'," + u.Edad + ",'" + u.Genero + "','" + u.Localidad + "'," + u.Visibilidad_perfil + ")";
+                string genre = u.Genero.HasValue ? u.Genero.Value.ToString() : "NULL";
+                string insert = "insert into users(email,nombre,username,password,age,gender,locality,profile_visibility,verified) VALUES ('"
+                    + u.Correo + "','" + u.Nombre + "','" + u.NombreUsu + "','" + u.Contraseña + "'," + u.Edad + "," + genre + ",'" + u.Localidad + "'," + 0 + "," + 0 + ")";
+                //POR DEFECTO, VISIBILIDAD Y VERIFICACION SON FALSAS
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
 
 

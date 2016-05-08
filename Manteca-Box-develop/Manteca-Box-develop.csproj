@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,14 +62,12 @@
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
-    <Content Include="assets\icono-mb.png" />
-    <Content Include="assets\icono-mb.svg" />
     <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="styles\main_style.css" />
     <Content Include="Control_Usuarios\Register.aspx" />
     <Content Include="Principal.Master" />
-    <Content Include="ConfirmacionRegistro.aspx" />
+    <Content Include="Control_Usuarios\ConfirmacionRegistro.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,11 +124,11 @@
     <Compile Include="Subir-archivo.aspx.designer.cs">
       <DependentUpon>Subir-archivo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConfirmacionRegistro.aspx.cs">
+    <Compile Include="Control_Usuarios\ConfirmacionRegistro.aspx.cs">
       <DependentUpon>ConfirmacionRegistro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConfirmacionRegistro.aspx.designer.cs">
+    <Compile Include="Control_Usuarios\ConfirmacionRegistro.aspx.designer.cs">
       <DependentUpon>ConfirmacionRegistro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
