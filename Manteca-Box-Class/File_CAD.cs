@@ -32,7 +32,7 @@ namespace File_CAD_Class
                 archivo.ID = dr.GetInt32(0);
                 archivo.Nombre = (dr["name"].ToString());
                 archivo.Descripcion = (dr["description"].ToString());
-                archivo.Fecha_creacion = (DateTime)dr["creation_date"];
+                archivo.Fecha_creacion = (DateTime)dr["date"];
                 archivo.Propietario = dr.GetInt16(4);
 
 
@@ -83,7 +83,7 @@ namespace File_CAD_Class
             {
                 nueva_conexion.Open();
                 string insert = "";
-                insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
+                insert = "Insert Into Files(name,description,date,owner) VALUES ('";
                 insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
 
