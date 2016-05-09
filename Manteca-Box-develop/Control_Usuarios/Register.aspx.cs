@@ -11,15 +11,8 @@ namespace Manteca_Box_develop
         {
         }
 
-        protected void Button_Register_Click(object sender, EventArgs e)
+        protected void EnviarCorreoConfirmacion()
         {
-            User_EN en = new User_EN();
-            en.NombreUsu = user_name_register.Text;
-            en.Correo = correo_register.Text;
-            en.Contraseña = password_register1.Text;
-            en.InsertarUsuario();
-
-            //IF se ha insertado::
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
             smtpClient.Port = 587;
             MailMessage message = new MailMessage();
@@ -42,14 +35,36 @@ namespace Manteca_Box_develop
                 smtpClient.Credentials = new System.Net.NetworkCredential("mantecabox@gmail.com", "ElChiringuito");
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
-                Response.Write("Correcto email");
+                //Response.Write("Correcto email");
             }
-            catch(Exception ex){
-                Response.Write("Incorrecto email");
+            catch (Exception ex)
+            {
+                //Response.Write("Incorrecto email");
                 Response.Write(ex.GetBaseException());
                 //Label1.Text = "No se pudo enviar el mensaje!";
                 //e.GetBaseExceptio();
             }
+        }
+
+        protected void Button_Register_Click(object sender, EventArgs e)
+        {
+            EmailExistsError_Register.Visible = 
+            UsernameExistsError_Register.Visible = false; //Reiniciamos los errores para que si a la proxima le salen bien no les vuelva a salir
+            User_EN busqueda = new User_EN();
+            if (busqueda.BuscarUsuario(user_name_register.Text) == null) //Si no existe el usuario
+            {
+                if (busqueda.BuscarUsuario(correo_register.Text) == null) //Si no existe el correo
+                {
+                    User_EN en = new User_EN();
+                    en.NombreUsu = user_name_register.Text;
+                    en.Correo = correo_register.Text;
+                    en.Contraseña = password_register1.Text;
+                    en.InsertarUsuario();
+                    EnviarCorreoConfirmacion();
+                }
+                else EmailExistsError_Register.Visible = true;
+            }
+            else UsernameExistsError_Register.Visible = true;
 
         }
     }

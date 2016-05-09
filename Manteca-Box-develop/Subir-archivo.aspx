@@ -15,7 +15,7 @@
                 <ul>
                     <li class="botton-Examinar" style="list-style:none">
                         <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <!--<input type="submit" value="Subir">-->
+                    </li>
                     <li class="botton-subir" style="list-style:none">
                         <asp:Button ID="Button1" runat="server" Text="Subir" OnClick="Button_Upload_Click"/>
                     </li>
