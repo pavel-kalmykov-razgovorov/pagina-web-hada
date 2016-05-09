@@ -44,7 +44,29 @@ namespace File_CAD_Class
 
             return lista;
         }
+        public ArrayList MostrarFilesUsuarioNombre(string nombreUsuario)
+        {
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select File.* from Files LEFT JOIN Users ON Files.owner=Users.id where Users.username='" + nombreUsuario + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                File_EN archivo = new File_EN();
+                archivo.ID = dr.GetInt32(0);
+                archivo.Nombre = (dr["name"].ToString());
+                archivo.Descripcion = (dr["description"].ToString());
+                archivo.Fecha_creacion = (DateTime)dr["creation_date"];
+                archivo.Propietario = dr.GetInt16(4);
 
+                lista.Add(archivo);
+
+            }
+            dr.Close();
+            c.Close();
+
+            return lista;
+        }
         public bool BuscarFile(File_EN f)
         {
             bool encontrado = false;

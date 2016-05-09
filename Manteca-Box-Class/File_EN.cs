@@ -111,6 +111,14 @@ namespace File_EN_Class
             showFile.showLikes(this);
         }
 
+        public ArrayList MostrarFilesUsuarioNombreEn()
+        {
+            File_CAD ListaArchivos = new File_CAD();
+            ArrayList a = new ArrayList();
+            a = ListaArchivos.MostrarFilesUsuarioNombre(this.Nombre);
+            return a;
+        }
+
         public File_EN()
         {
             id = 0;
@@ -119,6 +127,7 @@ namespace File_EN_Class
             fecha_creacion = new DateTime();
             fecha_modificacion = new DateTime();
             lista_etiquetas = "";
+            propietario = 0;
         }
 
     }
