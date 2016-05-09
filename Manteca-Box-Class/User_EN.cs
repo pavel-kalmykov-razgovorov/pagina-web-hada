@@ -117,10 +117,11 @@ namespace User_EN_Class
             userDelete.BorrarUser(this);
         }
 
-        public bool BuscarUsuario()
+        public User_EN BuscarUsuario(string clave)
         {
-            User_CAD userFind = new User_CAD();
-            return userFind.BuscarUser(this);
+            User_CAD busqueda = new User_CAD();
+            User_EN usuarioBuscado = busqueda.BuscarUser(clave);
+            return usuarioBuscado;
         }
 
         public ArrayList ListarAmigos()

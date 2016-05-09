@@ -13,6 +13,33 @@ namespace Manteca_Box_develop {
     public partial class Login {
         
         /// <summary>
+        /// Control WrongPasswordError_Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WrongPasswordError_Login;
+        
+        /// <summary>
+        /// Control UserNotExistsError_Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UserNotExistsError_Login;
+        
+        /// <summary>
+        /// Control UserNotVerifiedError_Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UserNotVerifiedError_Login;
+        
+        /// <summary>
         /// Control username_login_input.
         /// </summary>
         /// <remarks>

@@ -5,9 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
-            <h1 class="mdl-card__title-text">¡Bienvenido! Nos alegramos de verte</h1>
+            <h1 class="mdl-card__title-text">¡Bienvenido! Nos alegramos de verte</h1>            
         </div>
         <div class="mdl-card__supporting-text">
+            <asp:Label ID="WrongPasswordError_Login" runat="server" Text="Contraseña Incorrecta" Visible="false" CssClass="mdl-card__subtitle-text mdl-color-text--red"></asp:Label>
+            <asp:Label ID="UserNotExistsError_Login" runat="server" Text="Usuario no encontrado" Visible="false" CssClass="mdl-card__subtitle-text mdl-color-text--red"></asp:Label>
+            <asp:Label ID="UserNotVerifiedError_Login" runat="server" Text="Usuario no verificado. Comprueba tu correo" Visible="false" CssClass="mdl-card__subtitle-text mdl-color-text--red"> </asp:Label>
             <ul class="demo-list-control mdl-list">
                 <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">

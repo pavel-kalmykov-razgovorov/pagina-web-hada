@@ -12,18 +12,22 @@ namespace Manteca_Box_develop
 
         protected void Button_Login_Click(object sender, EventArgs e)
         {
-            User_EN user = new User_EN();
-            user.NombreUsu = username_login_input.Text;
-            user.Contraseña = password_login_input.Text;
-            if(user.BuscarUsuario())
+            User_EN busqueda = new User_EN();
+            User_EN usuario = busqueda.BuscarUsuario(username_login_input.Text);
+            if (usuario != null)
             {
-                user.MostrarUsuario();
-                Session["user_session_data"] = user;
+                if (usuario.Contraseña == password_login_input.Text)
+                {
+                    if (usuario.Verified)
+                    {
+                        Session["user_session_data"] = usuario;
+                        Response.Redirect("Editar-Perfil.aspx");
+                    }
+                    else UserNotVerifiedError_Login.Visible = true;
+                }
+                else WrongPasswordError_Login.Visible = true;
             }
-            else
-            {
-                //Mostrar error de que el usuario no existe
-            }
+            else UserNotExistsError_Login.Visible = true;
         }
     }
 }
