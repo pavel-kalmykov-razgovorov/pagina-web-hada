@@ -115,7 +115,7 @@ namespace File_EN_Class
         {
             File_CAD ListaArchivos = new File_CAD();
             ArrayList a = new ArrayList();
-            a = ListaArchivos.MostrarFilesUsuarioNombre(this.Nombre);
+            a = ListaArchivos.MostrarFilesUsuarioNombre(this.Propietario);
             return a;
         }
 

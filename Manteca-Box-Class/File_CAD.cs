@@ -44,11 +44,11 @@ namespace File_CAD_Class
 
             return lista;
         }
-        public ArrayList MostrarFilesUsuarioNombre(string nombreUsuario)
+        public ArrayList MostrarFilesUsuarioNombre(int nombreUsuario)
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select File.* from Files LEFT JOIN Users ON Files.owner=Users.id where Users.username='" + nombreUsuario + "'", c);
+            SqlCommand com = new SqlCommand("Select File.* from Files LEFT JOIN Users ON Files.owner=Users.id where Users.ID='" + nombreUsuario + "'", c);
             SqlDataReader dr = com.ExecuteReader();
             while (dr.Read())
             {
