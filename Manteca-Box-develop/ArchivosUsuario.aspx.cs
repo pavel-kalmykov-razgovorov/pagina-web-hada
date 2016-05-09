@@ -17,11 +17,10 @@ namespace Manteca_Box_develop
         {
             if (Request.QueryString.Count > 0)
             {
-                if (Request.QueryString.Keys[0] == "Nombre")
+                if (Request.QueryString.Keys[0] == "ID")
                 {
                     File_EN fi = new File_EN();
-                    int User = Convert.ToInt32(Request.QueryString["Nombre"]);
-                    fi.Propietario = User;
+                    fi.Propietario = Convert.ToInt32(Request.QueryString["ID"]);
                     GridViewMostrarArchivos.DataSource = fi.MostrarFilesUsuarioNombreEn();
                     GridViewMostrarArchivos.DataBind();
                     

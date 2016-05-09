@@ -44,26 +44,28 @@ namespace File_CAD_Class
 
             return lista;
         }
-        public ArrayList MostrarFilesUsuarioNombre(int nombreUsuario)
+        public ArrayList MostrarFilesUsuarioNombre(int propietario)
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
-            c.Open();
-            SqlCommand com = new SqlCommand("Select File.* from Files LEFT JOIN Users ON Files.owner=Users.id where Users.ID='" + nombreUsuario + "'", c);
-            SqlDataReader dr = com.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                File_EN archivo = new File_EN();
-                archivo.ID = dr.GetInt32(0);
-                archivo.Nombre = (dr["name"].ToString());
-                archivo.Descripcion = (dr["description"].ToString());
-                archivo.Fecha_creacion = (DateTime)dr["creation_date"];
-                archivo.Propietario = dr.GetInt16(4);
-
-                lista.Add(archivo);
-
+                c.Open();
+                SqlCommand com = new SqlCommand("Select * from Files where owner = " + propietario, c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    File_EN archivo = new File_EN();
+                    archivo.ID = (int)dr["ID"];
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["description"].ToString();
+                    archivo.Fecha_creacion = (DateTime)dr["creation_date"];
+                    archivo.Propietario = (int)(byte) dr["owner"];
+                    lista.Add(archivo);
+                }
+                dr.Close();
             }
-            dr.Close();
-            c.Close();
+            catch (Exception ex) { }
+            finally { c.Close(); }
 
             return lista;
         }
