@@ -1,3 +1,7 @@
+body {
+    background: url('cloud_background.png') no-repeat center center;
+}
+
 .demo-card-wide.mdl-card {
 	width: 90%;
 	display: block;
@@ -85,4 +89,8 @@
 
 #Editar_Perfil_Genero label.mdl-radio {
     margin-right: .5em;
+}
+
+.icono-web {
+    width: 2.5em;
 }

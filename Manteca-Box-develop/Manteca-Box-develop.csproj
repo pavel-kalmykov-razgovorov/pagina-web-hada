@@ -64,6 +64,9 @@
     </Content>
     <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="styles\cloud_background.png" />
+    <Content Include="styles\icono-mb.png" />
+    <Content Include="styles\icono-mb.svg" />
     <Content Include="styles\main_style.css" />
     <Content Include="Control_Usuarios\Register.aspx" />
     <Content Include="Principal.Master" />
