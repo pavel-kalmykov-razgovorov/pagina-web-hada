@@ -91,6 +91,9 @@ body {
     margin-right: .5em;
 }
 
+.alinear{
+    text-align: center;
+}
 .icono-web {
     width: 2.5em;
 }
