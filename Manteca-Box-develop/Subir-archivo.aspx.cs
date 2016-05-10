@@ -35,11 +35,11 @@ namespace Manteca_Box_develop
                         Directory.CreateDirectory(filesPath); //Crea un directorio para los archivos; si existe, no hace nada
                         FileUpload1.PostedFile.SaveAs(filesPath + FileUpload1.FileName);
                         /**
-                            * TODO:
-                            * · Renombrar el archivo por su ID (sin extension)
-                            * · Extraer información del archivo: Nombre, fecha de última modificación, extensión
-                            * · Cuando se visualice, se deberá de extraer una miniatura (de cuantos mas tipos de archivo, mejor)
-                            */
+                         * TODO:
+                         * · Renombrar el archivo por su ID (sin extension)
+                         * · Extraer información del archivo: Nombre, fecha de última modificación, extensión
+                         * · Cuando se visualice, se deberá de extraer una miniatura (de cuantos mas tipos de archivo, mejor)
+                        */
                         File_EN fileBBDD = new File_EN();
                         fileBBDD.Nombre = FileUpload1.FileName;
                         fileBBDD.Propietario = user.ID;

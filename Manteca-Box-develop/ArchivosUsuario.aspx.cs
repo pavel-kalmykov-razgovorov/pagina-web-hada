@@ -23,7 +23,6 @@ namespace Manteca_Box_develop
                     fi.Propietario = Convert.ToInt32(Request.QueryString["ID"]);
                     GridViewMostrarArchivos.DataSource = fi.MostrarFilesUsuarioNombreEn();
                     GridViewMostrarArchivos.DataBind();
-                    
                 }
             }
         }

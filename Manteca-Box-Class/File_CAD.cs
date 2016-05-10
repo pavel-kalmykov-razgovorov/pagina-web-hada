@@ -58,7 +58,7 @@ namespace File_CAD_Class
                     archivo.ID = (int)dr["ID"];
                     archivo.Nombre = dr["name"].ToString();
                     archivo.Descripcion = dr["description"].ToString();
-                    archivo.Fecha_creacion = (DateTime)dr["creation_date"];
+                    archivo.Fecha_creacion = (DateTime)dr["date"];
                     archivo.Propietario = (int)(byte) dr["owner"];
                     lista.Add(archivo);
                 }
