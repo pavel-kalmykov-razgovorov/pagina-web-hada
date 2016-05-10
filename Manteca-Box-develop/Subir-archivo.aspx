@@ -9,18 +9,16 @@
         </div>
         <div>
             <div class="text-escoge">
-                <label>Escoge el archivo a ssubir:</label>
+                <label>Escoge el archivo a subir:</label>
             </div>
-            <div>
-                <ul>
-                    <li class="botton-Examinar" style="list-style:none">
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                    </li>
-                    <li class="botton-subir" style="list-style:none">
-                        <asp:Button ID="Button1" runat="server" Text="Subir" OnClick="Button_Upload_Click"/>
-                    </li>
-                </ul>    
-             </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <asp:FileUpload ID="FileUpload1" runat="server" CssClass="mdl-button mdl-js-button mdl-button--primary"/>
+                <br />
+                <asp:LinkButton ID="Button1" runat="server" OnClick="Button_Upload_Click" CssClass="mdl-button mdl-js-button mdl-button--primary">
+                <i class="material-icons">publish</i>
+                Subir
+                </asp:LinkButton>
+            </div>
         </div>
     </div>
 </asp:Content>
