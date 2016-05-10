@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +13,22 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user_session_data"] == null) Response.Redirect("~/Control_Usuarios/Login.aspx");
+            //InitInputClasses();
+            User_EN en = (User_EN)Session["user_session_data"];
+            if (en != null)
+            {
+                en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
+                MostrarDirectorio(en);
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void MostrarDirectorio(User_EN en)
+        {
+
         }
 
         protected void FileUpload1_DataBinding(object sender, EventArgs e)
@@ -26,29 +40,39 @@ namespace Manteca_Box_develop
         {
             if (IsPostBack)
             {
-                User_EN user = (User_EN)Session["user_session_data"];
+                
+                String path = Server.MapPath("~/Files/");
                 if (FileUpload1.HasFile)
                 {
                     try
                     {
-                        string filesPath = Server.MapPath("~/Files/");
-                        Directory.CreateDirectory(filesPath); //Crea un directorio para los archivos; si existe, no hace nada
-                        FileUpload1.PostedFile.SaveAs(filesPath + FileUpload1.FileName);
-                        /**
-                            * TODO:
-                            * · Renombrar el archivo por su ID (sin extension)
-                            * · Extraer información del archivo: Nombre, fecha de última modificación, extensión
-                            * · Cuando se visualice, se deberá de extraer una miniatura (de cuantos mas tipos de archivo, mejor)
-                            */
-                        File_EN fileBBDD = new File_EN();
-                        fileBBDD.Nombre = FileUpload1.FileName;
-                        fileBBDD.Propietario = user.ID;
-                        fileBBDD.SubirArchivo();
-                        Response.Write("Ha subido correctamente!");
+                        User_EN user = (User_EN)Session["user_session_data"];
+                        if (user != null)
+                        {
+                            FileUpload1.PostedFile.SaveAs(path
+                                + FileUpload1.FileName);
+                            File_EN arx = new File_EN();
+                            Response.Write(user.NombreUsu);
+                            user.LeerUsuario();
+                            arx.Nombre = FileUpload1.FileName;
+                            arx.Propietario = user.ID;
+                            //Response.Write(user.ID);
+                            //Response.Write(user.NombreUsu);
+                            arx.SubirArchivo();
+
+                        }
+                        else
+                            Response.Write("Error. usuario no válido");
                     }
-                    catch (Exception ex) { Response.Write("El archivo no se puede subir."); }
+                    catch (Exception ex)
+                    {
+                        Response.Write("El archivo no se puede subir.");
+                    }
                 }
-                else Response.Write("Cannot accept files of this type.");
+                else
+                {
+                    Response.Write("Cannot accept files of this type.");
+                }
             }
         }
     }

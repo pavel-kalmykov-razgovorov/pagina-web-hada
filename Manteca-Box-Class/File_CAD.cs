@@ -22,7 +22,7 @@ namespace File_CAD_Class
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Files where ID=" + f.ID, c);
+            SqlCommand com = new SqlCommand("Select * from Users where ID=" + f.ID, c);
             SqlDataReader dr = com.ExecuteReader();
 
 
@@ -32,7 +32,7 @@ namespace File_CAD_Class
                 archivo.ID = dr.GetInt32(0);
                 archivo.Nombre = (dr["name"].ToString());
                 archivo.Descripcion = (dr["description"].ToString());
-                archivo.Fecha_creacion = (DateTime)dr["date"];
+                archivo.Fecha_creacion = (DateTime)dr["creation_date"];
                 archivo.Propietario = dr.GetInt16(4);
 
 
@@ -44,31 +44,7 @@ namespace File_CAD_Class
 
             return lista;
         }
-        public ArrayList MostrarFilesUsuarioNombre(int propietario)
-        {
-            SqlConnection c = new SqlConnection(Constants.nombreConexion);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("Select * from Files where owner = " + propietario, c);
-                SqlDataReader dr = com.ExecuteReader();
-                while (dr.Read())
-                {
-                    File_EN archivo = new File_EN();
-                    archivo.ID = (int)dr["ID"];
-                    archivo.Nombre = dr["name"].ToString();
-                    archivo.Descripcion = dr["description"].ToString();
-                    archivo.Fecha_creacion = (DateTime)dr["creation_date"];
-                    archivo.Propietario = (int)(byte) dr["owner"];
-                    lista.Add(archivo);
-                }
-                dr.Close();
-            }
-            catch (Exception ex) { }
-            finally { c.Close(); }
 
-            return lista;
-        }
         public bool BuscarFile(File_EN f)
         {
             bool encontrado = false;
@@ -107,7 +83,7 @@ namespace File_CAD_Class
             {
                 nueva_conexion.Open();
                 string insert = "";
-                insert = "Insert Into Files(name,description,date,owner) VALUES ('";
+                insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
                 insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
 
