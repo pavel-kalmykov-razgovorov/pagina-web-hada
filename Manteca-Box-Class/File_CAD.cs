@@ -22,7 +22,7 @@ namespace File_CAD_Class
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Users where ID=" + f.ID, c);
+            SqlCommand com = new SqlCommand("Select * from Files where ID=" + f.ID, c);
             SqlDataReader dr = com.ExecuteReader();
 
 
