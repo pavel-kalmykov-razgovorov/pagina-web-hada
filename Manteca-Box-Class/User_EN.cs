@@ -133,6 +133,25 @@ namespace User_EN_Class
             return a;
         }
 
+        public void LeerUsuario()
+        {
+            User_CAD cad = new User_CAD();
+            User_EN en = new User_EN();
+            en = cad.LeerUser(this);
+            if (en != null)
+            {
+                id = en.id;
+                nombre = en.nombre;
+                nombreUsu = en.nombreUsu;
+                correo = en.correo;
+                edad = en.edad;
+                genero = en.genero;
+                localidad = en.localidad;
+                visibilidad_perfil = en.visibilidad_perfil;
+                verified = en.verified;
+            }
+        }
+
         public bool confirmacionUsuario()
         {
             User_CAD confirmUser = new User_CAD();

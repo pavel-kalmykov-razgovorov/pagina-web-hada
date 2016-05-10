@@ -118,7 +118,11 @@ namespace File_EN_Class
             File_CAD showFile = new File_CAD();
             showFile.showLikes(this);
         }
-
+        public ArrayList MostrarFilesUsuarioNombreEn()
+        {
+            ArrayList a = new ArrayList();
+            return a;
+        }
         public File_EN()
         {
             id = 0;

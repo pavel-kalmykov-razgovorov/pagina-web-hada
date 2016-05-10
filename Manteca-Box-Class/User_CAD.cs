@@ -51,16 +51,16 @@ namespace User_CAD_Class
             if (dr.Read())
             {
                 User_EN usuario = new User_EN();
-                usuario.ID = (short)dr["ID"];
+                usuario.ID = Convert.ToInt16(dr["ID"]);
                 usuario.Correo = dr["email"].ToString();
                 usuario.Nombre = dr["nombre"].ToString();
                 usuario.NombreUsu = dr["username"].ToString();
                 usuario.Contraseña = dr["password"].ToString();
-                usuario.Edad = (short)dr["age"];
-                usuario.Genero = (bool?)dr["gender"];
+                usuario.Edad = Convert.ToInt16(dr["age"]);
+                usuario.Genero = Convert.ToBoolean(dr["gender"]);
                 usuario.Localidad = dr["locality"].ToString();
-                usuario.Visibilidad_perfil = (bool)dr["profile_visibility"];
-                usuario.Verified = (bool)dr["verified"];
+                usuario.Visibilidad_perfil = Convert.ToBoolean(dr["profile_visibility"]);
+                usuario.Verified = Convert.ToBoolean(dr["verified"]);
                 lista.Add(usuario);
             }
             dr.Close();
@@ -139,6 +139,44 @@ namespace User_CAD_Class
             c.Close();
 
             return lista;
+        }
+
+        public User_EN LeerUser(User_EN u)
+        {
+
+            SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
+            User_EN usuario = new User_EN();
+
+            try
+            {
+                nueva_conexion.Open();
+                string select = "";
+                select = "Select * from Users where username ='" + u.NombreUsu + "' and password = '" + u.Contraseña + "'";
+                SqlCommand com = new SqlCommand(select, nueva_conexion);
+                SqlDataReader dr = com.ExecuteReader();
+
+                if (dr.Read())
+                {
+
+                    usuario.ID = Convert.ToInt16(dr["ID"]);
+                    usuario.Correo = dr["email"].ToString();
+                    usuario.Nombre = dr["nombre"].ToString();
+                    usuario.NombreUsu = dr["username"].ToString();
+                    usuario.Contraseña = dr["password"].ToString();
+                    usuario.Edad = Convert.ToInt16(dr["age"]);
+                    usuario.Genero = Convert.ToBoolean(dr["gender"]);
+                    usuario.Localidad = dr["locality"].ToString();
+                    usuario.Visibilidad_perfil = Convert.ToBoolean(dr["profile_visibility"]);
+                    usuario.Verified = Convert.ToBoolean(dr["verified"]);
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex) { }
+            finally { nueva_conexion.Close(); }
+
+            return usuario;
         }
 
         public void confirmacionUser(User_EN u)
