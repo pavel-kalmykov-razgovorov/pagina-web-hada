@@ -89,6 +89,7 @@ namespace Manteca_Box_develop
         protected void Editar_Perfil_Guardar_Click(object sender, EventArgs e)
         {
             User_EN en = new User_EN();
+            en.ID = 4;
             en.NombreUsu = Editar_Perfil_Usuario.Text;
             en.Correo = Editar_Perfil_Email.Text;
             en.Contraseña = Editar_Perfil_Contraseña.Text;
