@@ -51,7 +51,7 @@
                         <asp:HyperLink ID="Link_Feed" runat="server" NavigateUrl="~/Subir-archivo.aspx" CssClass="mdl-navigation__link">
                             <i class="material-icons">library_books</i> Feed
                         </asp:HyperLink>
-                        <asp:HyperLink ID="Link_MyFiles" runat="server" NavigateUrl="#" CssClass="mdl-navigation__link">
+                        <asp:HyperLink ID="Link_MyFiles" runat="server" NavigateUrl="~/ArchivosUsuario.aspx" CssClass="mdl-navigation__link">
                             <i class="material-icons">folder</i> Feed
                         </asp:HyperLink>
                         <asp:HyperLink ID="Link_Editar_Perfil" runat="server" NavigateUrl="~/Control_Usuarios/Editar-Perfil.aspx" CssClass="mdl-navigation__link">

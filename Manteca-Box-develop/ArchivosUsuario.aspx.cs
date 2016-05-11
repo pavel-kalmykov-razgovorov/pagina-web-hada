@@ -15,17 +15,21 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString.Count > 0)
-            {
-                if (Request.QueryString.Keys[0] == "ID")
+           // if (Request.QueryString.Count > 0)
+           // {
+           //     if (Request.QueryString.Keys[0] == "ID")
+                User_EN en = (User_EN)Session["user_session_data"];
+                if (en != null)
                 {
+                    en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
+             
                     File_EN fi = new File_EN();
-                    fi.Propietario = Convert.ToInt32(Request.QueryString["ID"]);
+                    fi.Propietario = en.ID;
                     GridViewMostrarArchivos.DataSource = fi.MostrarFilesUsuarioNombreEn();
                     GridViewMostrarArchivos.DataBind();
                     
                 }
-            }
+            //}
         }
     }
 }
