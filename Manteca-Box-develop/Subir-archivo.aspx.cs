@@ -49,17 +49,15 @@ namespace Manteca_Box_develop
                         User_EN user = (User_EN)Session["user_session_data"];
                         if (user != null)
                         {
-                            FileUpload1.PostedFile.SaveAs(path
-                                + FileUpload1.FileName);
+                            
                             File_EN arx = new File_EN();
                             Response.Write(user.NombreUsu);
                             user.LeerUsuario();
                             arx.Nombre = FileUpload1.FileName;
                             arx.Propietario = user.ID;
-                            //Response.Write(user.ID);
-                            //Response.Write(user.NombreUsu);
-                            arx.SubirArchivo();
-
+                            int id=arx.SubirArchivo();
+                            FileUpload1.PostedFile.SaveAs(path
+                                + "file" + id);
                         }
                         else
                             Response.Write("Error. usuario no válido");

@@ -32,9 +32,8 @@ namespace File_CAD_Class
                 archivo.ID = dr.GetInt32(0);
                 archivo.Nombre = (dr["name"].ToString());
                 archivo.Descripcion = (dr["description"].ToString());
-                archivo.Fecha_creacion = (DateTime)dr["creation_date"];
-                archivo.Propietario = dr.GetInt16(4);
-
+                archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
+                archivo.Propietario = Convert.ToByte(dr["owner"]);
 
                 lista.Add(archivo);
 
@@ -75,10 +74,10 @@ namespace File_CAD_Class
             return encontrado;
         }
 
-        public void SubirFile(File_EN f)
+        public int SubirFile(File_EN f)
         {
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
-
+            int id=0;
             try
             {
                 nueva_conexion.Open();
@@ -86,13 +85,18 @@ namespace File_CAD_Class
                 insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
                 insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
-
-
                 com.ExecuteNonQuery();
+                string select = "select ID from Files where name='" + f.Nombre + "' and creation_date='" + f.Fecha_creacion + "' and owner='" + f.Propietario + "'";
+                com = new SqlCommand(select, nueva_conexion);
+                SqlDataReader dr = com.ExecuteReader();
+ 
+                if (dr.Read())
+                    id = dr.GetInt32(0);
+
             }
             catch (Exception ex) { }
             finally { nueva_conexion.Close(); }
-
+            return id;
         }
 
         public ArrayList MostrarFilesUsuarioNombre(int propietario)
@@ -106,11 +110,11 @@ namespace File_CAD_Class
                 while (dr.Read())
                 {
                     File_EN archivo = new File_EN();
-                    archivo.ID = (int)dr["ID"];
+                    archivo.ID = Convert.ToInt16(dr["ID"]);
                     archivo.Nombre = dr["name"].ToString();
                     archivo.Descripcion = dr["description"].ToString();
-                    archivo.Fecha_creacion = (DateTime)dr["creation_date"];
-                    archivo.Propietario = (int)(byte)dr["owner"];
+                    archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
+                    archivo.Propietario = Convert.ToByte(dr["owner"]);
                     lista.Add(archivo);
                 }
                 dr.Close();
@@ -119,6 +123,7 @@ namespace File_CAD_Class
             finally { c.Close(); }
 
             return lista;
+
         }
 
         public void BorrarFile(File_EN f)
@@ -148,8 +153,6 @@ namespace File_CAD_Class
         {
 
         }
-
-       
 
     }
 }

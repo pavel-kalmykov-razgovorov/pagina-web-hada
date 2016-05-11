@@ -87,10 +87,10 @@ namespace File_EN_Class
             findFile.BuscarFile(this);
         }
 
-        public void SubirArchivo()
+        public int SubirArchivo()
         {
             File_CAD upFile = new File_CAD();
-            upFile.SubirFile(this);
+            return upFile.SubirFile(this);
         }
 
         public void BorrarArchivo()
@@ -118,11 +118,7 @@ namespace File_EN_Class
             File_CAD showFile = new File_CAD();
             showFile.showLikes(this);
         }
-        public ArrayList MostrarFilesUsuarioNombreEn()
-        {
-            ArrayList a = new ArrayList();
-            return a;
-        }
+
         public File_EN()
         {
             id = 0;
@@ -131,7 +127,6 @@ namespace File_EN_Class
             fecha_creacion = new DateTime();
             fecha_modificacion = new DateTime();
             lista_etiquetas = "";
-            propietario = 0;
         }
 
     }
