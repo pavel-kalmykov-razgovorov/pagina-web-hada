@@ -95,6 +95,32 @@ namespace File_CAD_Class
 
         }
 
+        public ArrayList MostrarFilesUsuarioNombre(int propietario)
+        {
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("Select * from Files where owner = " + propietario, c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    File_EN archivo = new File_EN();
+                    archivo.ID = (int)dr["ID"];
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["description"].ToString();
+                    archivo.Fecha_creacion = (DateTime)dr["creation_date"];
+                    archivo.Propietario = (int)(byte)dr["owner"];
+                    lista.Add(archivo);
+                }
+                dr.Close();
+            }
+            catch (Exception ex) { }
+            finally { c.Close(); }
+
+            return lista;
+        }
+
         public void BorrarFile(File_EN f)
         {
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);

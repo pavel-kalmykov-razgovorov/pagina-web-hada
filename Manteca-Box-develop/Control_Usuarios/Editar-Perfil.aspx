@@ -13,7 +13,7 @@
                     <span class="mdl-list__item-primary-content">
                         <label class="etiqueta-editar-perfil">Usuario:</label>
                         <span id="Editar_Perfil_Usuario_Span" class="mdl-textfield mdl-js-textfield" runat="server">
-                            <asp:TextBox ID="Editar_Perfil_Usuario" runat="server" ReadOnly="True" CssClass="mdl-textfield__input"></asp:TextBox>
+                            <asp:TextBox ID="Editar_Perfil_Usuario" runat="server" CssClass="mdl-textfield__input"></asp:TextBox>
                             <label class="mdl-textfield__label" for="ContentPlaceHolder1_Editar_Perfil_Usuario"></label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="Editar_Perfil_Usuario" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="Editar_Perfil_Usuario" ValidationExpression="\w{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>

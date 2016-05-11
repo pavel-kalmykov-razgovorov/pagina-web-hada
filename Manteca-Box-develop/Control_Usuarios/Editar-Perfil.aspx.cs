@@ -65,30 +65,40 @@ namespace Manteca_Box_develop
             Editar_Perfil_Guardar.Visible = true;
         }
 
-        protected void Editar_Perfil_Guardar_Click(object sender, EventArgs e)
-        {
-            if(Editar_Perfil_Visibilidad_Switch.Checked)
-            {
-                Response.Write("ON");
-            } else
-            {
-                Response.Write("OFF");
-            }
-        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             InitInputClasses();
             User_EN en = (User_EN) Session["user_session_data"];
-            if (en != null)
-            {
-                CargarDatos(en);
-                Editar_Perfil_Email.Text = "hello@example.com"; //Provisional hasta que Jordi lo arregle
-            }
-            else
-            {
-                Response.Redirect("Login.aspx");
-            }
+                if(en != null)
+                {
+                    if (!Page.IsPostBack)
+                    {
+                        CargarDatos(en);
+                        //Editar_Perfil_Email.Text = "hello@example.com"; 
+                    }
+                    
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+        }
+
+        protected void Editar_Perfil_Guardar_Click(object sender, EventArgs e)
+        {
+            User_EN en = new User_EN();
+            en.NombreUsu = Editar_Perfil_Usuario.Text;
+            en.Correo = Editar_Perfil_Email.Text;
+            en.Contraseña = Editar_Perfil_Contraseña.Text;
+            en.Edad = Convert.ToInt16(Editar_Perfil_Edad.Text);
+            en.Localidad = Editar_Perfil_Localidad.Text;
+            en.Visibilidad_perfil = Editar_Perfil_Visibilidad_Switch.Checked;
+            if (Editar_Perfil_Hombre.Checked) en.Genero = true;
+            else if (Editar_Perfil_Mujer.Checked) en.Genero = false;
+            else en.Genero = null;
+            en.actualizarUsuario();
         }
     }
 }

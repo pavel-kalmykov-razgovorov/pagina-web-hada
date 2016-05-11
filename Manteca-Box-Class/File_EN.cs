@@ -99,6 +99,14 @@ namespace File_EN_Class
             deleteFile.BorrarFile(this);
         }
 
+        public ArrayList MostrarFilesUsuarioNombreEn()
+        {
+            File_CAD ListaArchivos = new File_CAD();
+            ArrayList a = new ArrayList();
+            a = ListaArchivos.MostrarFilesUsuarioNombre(this.Propietario);
+            return a;
+        }
+
         public void MostrarVersiones()
         {
             File_CAD showVersion = new File_CAD();
@@ -119,6 +127,7 @@ namespace File_EN_Class
             fecha_creacion = new DateTime();
             fecha_modificacion = new DateTime();
             lista_etiquetas = "";
+            propietario = 0;
         }
 
     }
