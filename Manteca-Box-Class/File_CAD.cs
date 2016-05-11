@@ -97,7 +97,6 @@ namespace File_CAD_Class
                     f.ID = id;
                     newVersion(f);
                 }
-
             }
             catch (Exception ex) { }
             finally { nueva_conexion.Close(); }
