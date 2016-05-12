@@ -94,7 +94,7 @@ namespace User_CAD_Class
          */
         public User_EN BuscarUser(string busqueda)
         {
-            User_EN buscado = null;
+            User_EN usuario = null;
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
             try
             {
@@ -104,24 +104,24 @@ namespace User_CAD_Class
                 SqlDataReader dr = com.ExecuteReader();
                 if (dr.Read()) //Teóricamente solo debe de devolver una sola fila debido a que tanto el usuario como el email son claves alternativas (no nulos y no repetidos)
                 {
-                    buscado = new User_EN();
-                    buscado.ID = (short)(byte)dr["ID"];
-                    buscado.Correo = dr["email"].ToString();
-                    buscado.Nombre = dr["nombre"].ToString();
-                    buscado.NombreUsu = dr["username"].ToString();
-                    buscado.Contraseña = dr["password"].ToString();
-                    buscado.Edad = (short)(byte)dr["age"];
-                    buscado.Genero = (bool?)dr["gender"];
-                    buscado.Localidad = dr["locality"].ToString();
-                    buscado.Visibilidad_perfil = (bool)dr["profile_visibility"];
-                    buscado.Verified = (bool)dr["verified"];
+                    usuario = new User_EN();
+                    usuario.ID = Convert.ToInt16(dr["ID"]);
+                    usuario.Correo = dr["email"].ToString();
+                    usuario.Nombre = dr["nombre"].ToString();
+                    usuario.NombreUsu = dr["username"].ToString();
+                    usuario.Contraseña = dr["password"].ToString();
+                    usuario.Edad = Convert.ToInt16(dr["age"]);
+                    //usuario.Genero = Convert.ToBoolean(dr["gender"]);
+                    usuario.Localidad = dr["locality"].ToString();
+                    usuario.Visibilidad_perfil = Convert.ToBoolean(dr["profile_visibility"]);
+                    usuario.Verified = Convert.ToBoolean(dr["verified"]);
                 }
                 dr.Close();
             }
             catch (Exception ex) { }
             finally { nueva_conexion.Close(); }
 
-            return buscado;
+            return usuario;
         }
 
         public ArrayList ListarAmigos()
