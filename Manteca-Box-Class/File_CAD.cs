@@ -109,11 +109,13 @@ namespace File_CAD_Class
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Files where owner = " + propietario, c);
+                string select = "Select * from Files,Versions where owner = " + propietario + " and Files.ID=Versions.Files1 order by ID,num_version";
+                SqlCommand com = new SqlCommand(select, c);
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {
                     File_EN archivo = new File_EN();
+                    archivo.Version = Convert.ToInt16(dr["num_version"]);
                     archivo.ID = Convert.ToInt16(dr["ID"]);
                     archivo.Nombre = dr["name"].ToString();
                     archivo.Descripcion = dr["description"].ToString();

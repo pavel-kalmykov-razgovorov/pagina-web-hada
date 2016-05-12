@@ -72,6 +72,14 @@ namespace File_EN_Class
             set { lista_etiquetas = value; }
         }
 
+        private int version;
+
+        public int Version
+        {
+            get { return version; }
+            set { version = value; }
+        }
+
         public ArrayList MostrarArchivo()
         {
             ArrayList a = new ArrayList();
