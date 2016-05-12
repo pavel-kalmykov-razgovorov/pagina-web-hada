@@ -28,18 +28,21 @@ namespace Manteca_Box_develop
         protected void CargarDatos(User_EN en)
         {
             Editar_Perfil_Usuario.Text = en.NombreUsu;
+            Editar_Perfil_Nombre.Text = en.Nombre;
             Editar_Perfil_Email.Text = en.Correo;
             Editar_Perfil_Contraseña.Text = en.Contraseña;
+            Editar_Perfil_Localidad.Text = en.Localidad;
             if(en.Edad > 0) Editar_Perfil_Edad.Text = en.Edad.ToString();
             if (en.Genero == null) Editar_Perfil_NoMostrar.Checked = true;
             else if (en.Genero.Value == true) Editar_Perfil_Hombre.Checked = true;
             else Editar_Perfil_Mujer.Checked = true;
-            Editar_Perfil_Localidad.Text = en.Localidad;
+            
             if (en.Visibilidad_perfil == true)
             {
                 Editar_Perfil_Visibilidad_Switch.Checked = true;
                 Editar_Perfil_Visibilidad_Label.Text = "Público";
             }
+            Editar_Perfil_ID.Text = en.ID.ToString();
         }
 
         /**
@@ -51,6 +54,7 @@ namespace Manteca_Box_develop
             Editar_Perfil_Contraseña.Text = ""; //Vaciamos la contraseña para que no la puedan copiar
 
             Editar_Perfil_Usuario.ReadOnly =
+            Editar_Perfil_Nombre.ReadOnly =
             Editar_Perfil_Email.ReadOnly =
             Editar_Perfil_Contraseña.ReadOnly =
             Editar_Perfil_Edad.ReadOnly =
@@ -74,16 +78,32 @@ namespace Manteca_Box_develop
             {
                 Response.Write("OFF");
             }
+
+            User_EN en = new User_EN();
+            en.ID = Convert.ToInt16(Editar_Perfil_ID.Text);
+            en.NombreUsu = Editar_Perfil_Usuario.Text;
+            en.Nombre = Editar_Perfil_Nombre.Text;
+            en.Correo = Editar_Perfil_Email.Text;
+            en.Contraseña = Editar_Perfil_Contraseña.Text;
+            en.Edad = Convert.ToInt16(Editar_Perfil_Edad.Text);
+            en.Localidad = Editar_Perfil_Localidad.Text;
+            en.Visibilidad_perfil = Editar_Perfil_Visibilidad_Switch.Checked;
+
+            en.actualizarUsuario();
+ 
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             InitInputClasses();
-            User_EN en = (User_EN) Session["user_session_data"];
+            User_EN en = (User_EN)Session["user_session_data"];
             if (en != null)
             {
-                CargarDatos(en);
-                Editar_Perfil_Email.Text = "hello@example.com"; //Provisional hasta que Jordi lo arregle
+                if (!Page.IsPostBack)
+                {
+                    CargarDatos(en); 
+                }
+
             }
             else
             {

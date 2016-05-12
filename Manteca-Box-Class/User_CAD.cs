@@ -206,14 +206,13 @@ namespace User_CAD_Class
             {
                 nueva_conexion.Open();
                 string update = "";
-
-                if (u.Genero.ToString() == "True")
+                /*
+                if (u.Genero.Value == true)
                     genero = "1";
-                else 
-                    if (u.Genero.ToString() == "False")
-                        genero = "0";
+                else if (u.Genero.Value == false)
+                    genero = "0";*/
 
-                update = "Update Users set email = '" + u.Correo +  "',username = '" + u.NombreUsu + "',password = '" + u.Contraseña + "',age = " + u.Edad + ",gender = " + genero + ",locality = '" + u.Localidad + "',profile_visibility = '" + u.Visibilidad_perfil + "',verified = '" + u.Verified + "' where Users.ID ="+u.ID;
+                update = "Update Users set email = '" + u.Correo + "',nombre  = '" + u.Nombre + "',username = '" + u.NombreUsu + "',password = '" + u.Contraseña + "',age = " + u.Edad + ",gender = " + genero + ",locality = '" + u.Localidad + "',profile_visibility = '" + u.Visibilidad_perfil + "',verified = '" + u.Verified + "' where Users.ID ="+u.ID;
                 SqlCommand com = new SqlCommand(update, nueva_conexion);
 
 

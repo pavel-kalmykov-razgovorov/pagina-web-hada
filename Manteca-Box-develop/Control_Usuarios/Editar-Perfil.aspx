@@ -13,10 +13,20 @@
                     <span class="mdl-list__item-primary-content">
                         <label class="etiqueta-editar-perfil">Usuario:</label>
                         <span id="Editar_Perfil_Usuario_Span" class="mdl-textfield mdl-js-textfield" runat="server">
-                            <asp:TextBox ID="Editar_Perfil_Usuario" runat="server" CssClass="mdl-textfield__input"></asp:TextBox>
+                            <asp:TextBox ID="Editar_Perfil_Usuario" runat="server"  ReadOnly="True" CssClass="mdl-textfield__input"></asp:TextBox>
                             <label class="mdl-textfield__label" for="ContentPlaceHolder1_Editar_Perfil_Usuario"></label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="Editar_Perfil_Usuario" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="Editar_Perfil_Usuario" ValidationExpression="\w{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
+                        </span>
+                    </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <label class="etiqueta-editar-perfil">Nombre:</label>
+                        <span id="Editar_Perfil_Nombre_Span" class="mdl-textfield mdl-js-textfield" runat="server">
+                            <asp:TextBox ID="Editar_Perfil_Nombre" runat="server"  ReadOnly="True" CssClass="mdl-textfield__input"></asp:TextBox>
+                            <label class="mdl-textfield__label" for="ContentPlaceHolder1_Editar_Perfil_Nombre"></label>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorNombre" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="Editar_Perfil_Nombre" ValidationExpression="\w{4,50}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
@@ -82,7 +92,7 @@
                     <span class="mdl-list__item-primary-content">
                         <label class="etiqueta-editar-perfil">Visibilidad de perfil:</label>
                         <asp:Label ID="Editar_Perfil_Visibilidad" AssociatedControlID="Editar_Perfil_Visibilidad_Switch" runat="server" CssClass="mdl-switch mdl-js-switch mdl-js-ripple-effect">
-                            <asp:CheckBox ID="Editar_Perfil_Visibilidad_Switch" ClientIDMode="Static" Enabled="false" runat="server" onclick="onClickEvent_VisibilitySwitch()"/>
+                            <asp:CheckBox ID="Editar_Perfil_Visibilidad_Switch" ClientIDMode="Static" Enabled="false" runat="server" OnClick="onClickEvent_VisibilitySwitch()"/>
                             <asp:Label ID="Editar_Perfil_Visibilidad_Label" ClientIDMode="Static" runat="server" Text="Privado" CssClass="mdl-switch__label"></asp:Label>
                         </asp:Label>
                     </span>
@@ -98,6 +108,7 @@
                 <i class="material-icons">save</i>
                 Guardar Cambios
             </asp:LinkButton>
+            <asp:TextBox ID="Editar_Perfil_ID" runat="server" visible="false"></asp:TextBox>
         </div>
     </div>
 
