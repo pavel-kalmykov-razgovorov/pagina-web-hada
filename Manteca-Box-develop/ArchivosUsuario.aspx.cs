@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using User_EN_Class;
 using File_EN_Class;
 using System.Data.SqlClient;
+using System.Web.ClientServices;
+using System.IO;
+using System.Text;
 
 
 namespace Manteca_Box_develop
@@ -30,6 +33,32 @@ namespace Manteca_Box_develop
                     
                 }
             //}
+        }
+        protected void Descargar_Click(object sender, EventArgs e)
+        {
+            User_EN en = (User_EN)Session["user_session_data"];
+            if (en != null)
+            {
+                en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
+
+                File_EN file = new File_EN();
+                file.MostrarArchivo();
+
+                if (file != null)
+                {
+                    Response.Clear();
+                    Response.ClearContent();
+                    Response.ClearHeaders();
+                    Response.Buffer = true;
+                    Response.ContentType = "application/octet-stream";
+                    Response.AddHeader("Content-Disposition", "attachment;filename=" + file.Nombre);
+                    byte[] array = Encoding.UTF8.GetBytes(file.Nombre);
+                    Response.OutputStream.Write(array, 0, file.Nombre.Length);
+                    Response.Flush();
+                    Response.Close();
+                    Response.End();
+                }
+            }
         }
     }
 }

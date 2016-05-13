@@ -15,5 +15,6 @@
         </Columns>
         <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
     </asp:GridView>
-        </div>
+        <asp:Button ID="Descargar" runat="server" Text="Descargar" OnClick="Descargar_Click" CssClass="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"/>
+    </div>
 </asp:Content>
