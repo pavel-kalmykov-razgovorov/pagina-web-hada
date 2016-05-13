@@ -24,7 +24,7 @@ namespace Manteca_Box_develop
                    if (usuario.Verified)
                    {
                         Session["user_session_data"] = usuario;
-                        Response.Redirect("Editar-Perfil.aspx");
+                        Response.Redirect("~/ArchivosUsuario.aspx");
                    }
                    else UserNotVerifiedError_Login.Visible = true;
                 }

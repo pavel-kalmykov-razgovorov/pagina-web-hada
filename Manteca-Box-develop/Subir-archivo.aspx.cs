@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace Manteca_Box_develop
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Control_Usuarios/Login.aspx");
             }
         }
 
@@ -38,10 +39,11 @@ namespace Manteca_Box_develop
 
         protected void Button_Upload_Click(object sender, EventArgs e)
         {
+
             if (IsPostBack)
             {
                 
-                String path = Server.MapPath("~/Files/");
+                String path = Server.MapPath("Files/");
                 if (FileUpload1.HasFile)
                 {
                     try
@@ -57,7 +59,7 @@ namespace Manteca_Box_develop
                             arx.Propietario = user.ID;
                             int id=arx.SubirArchivo();
                             FileUpload1.PostedFile.SaveAs(path
-                                + "file" + id);
+                                + "file" + id + Path.GetExtension(FileUpload1.FileName));
                         }
                         else
                             Response.Write("Error. usuario no válido");
