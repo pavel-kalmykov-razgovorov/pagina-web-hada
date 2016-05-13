@@ -26,7 +26,6 @@
                         <span id="Editar_Perfil_Nombre_Span" class="mdl-textfield mdl-js-textfield" runat="server">
                             <asp:TextBox ID="Editar_Perfil_Nombre" runat="server"  ReadOnly="True" CssClass="mdl-textfield__input"></asp:TextBox>
                             <label class="mdl-textfield__label" for="ContentPlaceHolder1_Editar_Perfil_Nombre"></label>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorNombre" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="Editar_Perfil_Nombre" ValidationExpression="\w{4,50}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>
                         </span>
                     </span>
                 </li>
@@ -74,7 +73,7 @@
                             <span class="mdl-radio__label">Mujer</span>
                         </label>
                         <label id="Editar_Perfil_NoMostrar_Label" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ContentPlaceHolder1_Editar_Perfil_NoMostrar" runat="server">
-                            <asp:RadioButton ID="Editar_Perfil_NoMostrar" Enabled="False" runat="server" GroupName="genero" Checked="true" />
+                            <asp:RadioButton ID="Editar_Perfil_NoMostrar" Enabled="False" runat="server" GroupName="genero" />
                             <span class="mdl-radio__label">No mostrar</span>
                         </label>
                     </span>

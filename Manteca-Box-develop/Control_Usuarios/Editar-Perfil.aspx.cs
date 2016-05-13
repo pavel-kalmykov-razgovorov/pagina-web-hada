@@ -88,6 +88,12 @@ namespace Manteca_Box_develop
             en.Edad = Convert.ToInt16(Editar_Perfil_Edad.Text);
             en.Localidad = Editar_Perfil_Localidad.Text;
             en.Visibilidad_perfil = Editar_Perfil_Visibilidad_Switch.Checked;
+            if (Editar_Perfil_Hombre.Checked)
+                en.Genero = true;
+            else if (Editar_Perfil_Mujer.Checked)
+                en.Genero = false;
+            else
+                en.Genero = null;
 
             en.actualizarUsuario();
  

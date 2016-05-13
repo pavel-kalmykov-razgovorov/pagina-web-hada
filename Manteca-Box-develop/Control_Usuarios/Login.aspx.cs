@@ -21,12 +21,12 @@ namespace Manteca_Box_develop
             {
                 if (usuario.Contraseña == password_login_input.Text)
                 {
-                   // if (usuario.Verified)
-                   // {
+                   if (usuario.Verified)
+                   {
                         Session["user_session_data"] = usuario;
                         Response.Redirect("Editar-Perfil.aspx");
-                   // }
-                   // else UserNotVerifiedError_Login.Visible = true;
+                   }
+                   else UserNotVerifiedError_Login.Visible = true;
                 }
                 else WrongPasswordError_Login.Visible = true;
             }

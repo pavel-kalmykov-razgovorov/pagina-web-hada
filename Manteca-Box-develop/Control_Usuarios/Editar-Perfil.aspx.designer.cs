@@ -49,6 +49,33 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExUsuario;
         
         /// <summary>
+        /// Control Editar_Perfil_Nombre_Span.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editar_Perfil_Nombre_Span;
+        
+        /// <summary>
+        /// Control Editar_Perfil_Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_Nombre;
+        
+        /// <summary>
+        /// Control RegularExpressionValidatorNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorNombre;
+        
+        /// <summary>
         /// Control Editar_Perfil_Email_Span.
         /// </summary>
         /// <remarks>
@@ -263,5 +290,14 @@ namespace Manteca_Box_develop {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Editar_Perfil_Guardar;
+        
+        /// <summary>
+        /// Control Editar_Perfil_ID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Editar_Perfil_ID;
     }
 }
