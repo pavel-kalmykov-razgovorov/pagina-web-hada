@@ -12,6 +12,7 @@
             <asp:BoundField DataField="Nombre" HeaderText="Nombre Archivo" />
             <asp:BoundField DataField="Fecha_creacion" HeaderText="Fecha Creacion" />
             <asp:BoundField DataField="Propietario" HeaderText="Propietario" />
+            <asp:BoundField DataField="Version" HeaderText="Version" />
         </Columns>
         <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
     </asp:GridView>
