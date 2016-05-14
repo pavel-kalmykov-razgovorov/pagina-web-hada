@@ -4,12 +4,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
-            <h1 class="mdl-card__title-text">TOP ARCHIVOS</h1>
+            <h1 class="mdl-card__title-text">Destacados</h1>            
         </div>
-        <div>
-            <ul>
-                
-            </ul>
-        </div>
+    <asp:GridView ID="GridViewMostrarLikes" runat="server" AutoGenerateColumns="False"
+        CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <Columns>
+            <asp:BoundField DataField="nombre" HeaderText="Nombre Archivo" />
+            <asp:BoundField DataField="ID" HeaderText="likes" />
+            <asp:BoundField DataField="descripcion" HeaderText="Propietario" />
+        </Columns>
+        <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
+    </asp:GridView>
     </div>
 </asp:Content>

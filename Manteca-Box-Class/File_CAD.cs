@@ -81,6 +81,7 @@ namespace File_CAD_Class
             try
             {
                 nueva_conexion.Open();
+                f.Fecha_creacion = DateTime.Today; 
                 string insert = "";
                 insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
                 insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
@@ -189,9 +190,31 @@ namespace File_CAD_Class
 
         }
 
-        public void showLikes(File_EN f)
+        public ArrayList showLikes(File_EN f)
         {
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            try
+            {
+                c.Open();
+                string select = "select nombre,name, count(*) as lik from Likes,Files,Users where " +
+                    "Users.ID=Files.owner and Files.ID=Likes.files group by Files.name, Files.ID, nombre order by lik desc;";
+                SqlCommand com = new SqlCommand(select, c);
+                SqlDataReader dr = com.ExecuteReader();
+                int cont = 0;
+                while (cont++<10 && dr.Read())
+                {
+                    File_EN archivo = new File_EN();                
+                    archivo.ID = Convert.ToInt16(dr["Lik"]);
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["nombre"].ToString();
+                    lista.Add(archivo);
+                }
+                dr.Close();
+            }
+            catch (Exception ex) { }
+            finally { c.Close(); }
 
+            return lista;
         }
 
     }

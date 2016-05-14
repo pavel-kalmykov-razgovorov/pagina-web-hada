@@ -121,10 +121,12 @@ namespace File_EN_Class
             showVersion.ShowVersions(this);
         }
 
-        public void MostrarLikes()
+        public ArrayList MostrarLikes()
         {
+            ArrayList a = new ArrayList();
             File_CAD showFile = new File_CAD();
-            showFile.showLikes(this);
+            a=showFile.showLikes(this);
+            return a;
         }
 
         public File_EN()
