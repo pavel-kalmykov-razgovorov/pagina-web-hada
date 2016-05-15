@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Web.ClientServices;
 using System.IO;
 using System.Text;
-
+using System.Collections;
 
 namespace Manteca_Box_develop
 {
@@ -37,28 +37,24 @@ namespace Manteca_Box_develop
         }
         protected void Descargar_Click(object sender, EventArgs e)
         {
-            User_EN en = (User_EN)Session["user_session_data"];
-            if (en != null)
+            FileInfo file = new FileInfo(Server.MapPath("Files/Inicio.aspx.cs"));
+            if (file.Exists)
             {
-                en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
-
-                File_EN file = new File_EN();
-                file.MostrarArchivo();
-
-                if (file != null)
-                {
-                    Response.Clear();
-                    Response.ClearContent();
-                    Response.ClearHeaders();
-                    Response.Buffer = true;
-                    Response.ContentType = "application/octet-stream";
-                    Response.AddHeader("Content-Disposition", "attachment;filename=" + file.Nombre);
-                    byte[] array = Encoding.UTF8.GetBytes(file.Nombre);
-                    Response.OutputStream.Write(array, 0, file.Nombre.Length);
-                    Response.Flush();
-                    Response.Close();
-                    Response.End();
-                }
+                Response.Clear();
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                Response.AddHeader("Content-Length", file.Length.ToString());
+                Response.ContentType = "application/octet-stream";
+                Response.Flush();
+                Response.TransmitFile(file.FullName);
+                Response.End();
+            }
+        }
+        protected void Borrar_Click(object sender, EventArgs e)
+        {
+            FileInfo file = new FileInfo(Server.MapPath("Files/file9.md"));
+            if (file.Exists)
+            {
+                file.Delete();
             }
         }
     }
