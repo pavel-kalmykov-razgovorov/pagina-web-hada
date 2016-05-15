@@ -11,7 +11,7 @@ using System.Data.SqlTypes;
 
 using Constants_namespace;
 using File_EN_Class;
-//utima modificacion 15 de mayo a las 12
+
 namespace File_CAD_Class
 {
     public class File_CAD
@@ -81,11 +81,15 @@ namespace File_CAD_Class
             try
             {
                 nueva_conexion.Open();
-                f.Fecha_creacion = DateTime.Today; 
+                f.Fecha_creacion = DateTime.Now; 
                 string insert = "";
                 insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
-                insert+= f.Nombre + "','" +  f.Descripcion  + "','" +  f.Fecha_creacion + "','" + f.Propietario + "')";
+                //insert += f.Nombre + "','" + f.Descripcion + "','"+f.Fecha_creacion+"','" + f.Propietario + "')";
+                insert += f.Nombre + "','" + f.Descripcion + "','" + "','" + f.Propietario + "')";
+                
+                
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
+                
                 com.ExecuteNonQuery();
                 string select = "select ID from Files where name='" + f.Nombre + "' and owner='" +
                     f.Propietario + "' order by ID desc";
