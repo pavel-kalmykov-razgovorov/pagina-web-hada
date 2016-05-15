@@ -111,7 +111,7 @@ namespace File_CAD_Class
 
         public ArrayList MostrarFilesUsuarioNombre(int propietario)
         {
-               // Muestra todos los archivos de un usuario
+            // Muestra todos los archivos de un usuario
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             try
             {
