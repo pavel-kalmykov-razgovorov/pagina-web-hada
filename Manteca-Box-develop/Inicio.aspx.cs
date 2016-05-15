@@ -22,7 +22,7 @@ namespace Manteca_Box_develop
             //if (en != null)
             //{
                 //en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
-
+                // Muestra los archivos publicos
                 File_EN fi = new File_EN();
                 
                 GridViewMostrarLikes.DataSource = fi.MostrarLikes();

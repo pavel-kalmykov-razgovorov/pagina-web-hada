@@ -28,7 +28,7 @@ namespace Manteca_Box_develop
              
                     File_EN fi = new File_EN();
                     fi.Propietario = en.ID;//Para identificar al usuario
-                    //EL griedView, mostrara un taabla con todos los datos que nos devuelva MostrarFilesUsuarioNombreEn
+                    //EL griedView, mostrara un tabla con todos los datos que nos devuelva MostrarFilesUsuarioNombreEn
                     GridViewMostrarArchivos.DataSource = fi.MostrarFilesUsuarioNombreEn();
                     GridViewMostrarArchivos.DataBind();
                     

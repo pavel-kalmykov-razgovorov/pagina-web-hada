@@ -19,7 +19,7 @@ namespace File_CAD_Class
         ArrayList lista = new ArrayList();
 
         public ArrayList MostrarFile(File_EN f)
-        {
+        {   //mostrar datos File
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
             SqlCommand com = new SqlCommand("Select * from Users where ID=" + f.ID, c);

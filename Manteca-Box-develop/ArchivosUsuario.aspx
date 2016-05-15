@@ -10,7 +10,7 @@
         CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre Archivo" />
-            <asp:BoundField DataField="Fecha_creacion" HeaderText="Fecha Creacion" />
+            <asp:BoundField DataField="Fecha_creacion" HeaderText="Fecha Creación" />
             <asp:BoundField DataField="Propietario" HeaderText="Propietario" />
             <asp:BoundField DataField="Version" HeaderText="Version" />
 

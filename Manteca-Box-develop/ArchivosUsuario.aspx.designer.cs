@@ -15,7 +15,7 @@ namespace Manteca_Box_develop {
         /// <summary>
         /// Control GridViewMostrarArchivos.
         /// </summary>
-        /// <remarks>
+        /// <remarks>//
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>

@@ -130,7 +130,7 @@ namespace File_EN_Class
         }
 
         public File_EN()
-        {
+        {   //inicializa
             id = 0;
             nombre = "";
             descripcion = "";
