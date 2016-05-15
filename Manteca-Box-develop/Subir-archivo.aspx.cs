@@ -59,7 +59,7 @@ namespace Manteca_Box_develop
                             arx.Propietario = user.ID;
                             int id=arx.SubirArchivo();
                             FileUpload1.PostedFile.SaveAs(path
-                                + "file" + id + Path.GetExtension(FileUpload1.FileName));
+                                + arx.Nombre); //+ Path.GetExtension(FileUpload1.FileName));
                         }
                         else
                             Response.Write("Error. usuario no válido");
