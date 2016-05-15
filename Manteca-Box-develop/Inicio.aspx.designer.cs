@@ -6,7 +6,7 @@
 //     se vuelve a generar el código. 
 // </generado automáticamente>
 //------------------------------------------------------------------------------
-
+//utima modificacion 15 de mayo a las 12
 namespace Manteca_Box_develop {
     
     
