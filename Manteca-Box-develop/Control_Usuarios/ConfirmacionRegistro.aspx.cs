@@ -15,14 +15,13 @@ namespace Manteca_Box_develop
         {
             if (Request.QueryString.Count > 0)
             {
-                if (Request.QueryString.Keys[0] == "email")
+                if (Request.QueryString.Keys[0] == "email")//Si efecticamente la url es correcta
                 {
-                    User_EN en = new User_EN();
-                    string email = Request.QueryString["email"].ToString();
-                    en.Correo = email;
-                    en.confirmacionUsuario();
+                    User_EN en = new User_EN();//Creamos un nuevo usuario
+                    string email = Request.QueryString["email"].ToString();//Gracias a la url, podemos ver el usuario que ha recargado la pagina
+                    en.Correo = email;//Ahora que ese usuario sea el del email
+                    en.confirmacionUsuario();//Confirmacion 
 
-                    //LLamar a un en o cad con esta sentencia, para que modifique la columna verified
                 }
             }
         }

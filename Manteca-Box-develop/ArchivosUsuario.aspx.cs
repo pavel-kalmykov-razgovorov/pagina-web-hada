@@ -27,7 +27,8 @@ namespace Manteca_Box_develop
                     en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
              
                     File_EN fi = new File_EN();
-                    fi.Propietario = en.ID;
+                    fi.Propietario = en.ID;//Para identificar al usuario
+                    //EL griedView, mostrara un taabla con todos los datos que nos devuelva MostrarFilesUsuarioNombreEn
                     GridViewMostrarArchivos.DataSource = fi.MostrarFilesUsuarioNombreEn();
                     GridViewMostrarArchivos.DataBind();
                     
