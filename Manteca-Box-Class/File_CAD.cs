@@ -81,11 +81,12 @@ namespace File_CAD_Class
             try
             {
                 nueva_conexion.Open();
-                f.Fecha_creacion = DateTime.Now; 
+                f.Fecha_creacion= DateTime.Now;
+                string ahora = f.Fecha_creacion.ToString("yyyy/MM/dd HH:mm:ss");
                 string insert = "";
                 insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
-                //insert += f.Nombre + "','" + f.Descripcion + "','"+f.Fecha_creacion+"','" + f.Propietario + "')";
-                insert += f.Nombre + "','" + f.Descripcion + "','" + "','" + f.Propietario + "')";
+                insert += f.Nombre + "','" + f.Descripcion + "','"+ahora+"','" + f.Propietario + "')";
+                //insert += f.Nombre + "','" + f.Descripcion + "','" + "','" + f.Propietario + "')";
                 
                 
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
@@ -110,6 +111,7 @@ namespace File_CAD_Class
 
         public ArrayList MostrarFilesUsuarioNombre(int propietario)
         {
+               // Muestra todos los archivos de un usuario
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             try
             {

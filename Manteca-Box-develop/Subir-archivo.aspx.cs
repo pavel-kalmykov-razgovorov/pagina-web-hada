@@ -53,13 +53,16 @@ namespace Manteca_Box_develop
                         {
                             
                             File_EN arx = new File_EN();
-                            Response.Write(user.NombreUsu);
+                            
                             user.LeerUsuario();
                             arx.Nombre = FileUpload1.FileName;
                             arx.Propietario = user.ID;
                             int id=arx.SubirArchivo();
-                            FileUpload1.PostedFile.SaveAs(path
-                                + arx.Nombre); //+ Path.GetExtension(FileUpload1.FileName));
+                            string pathString= path + user.ID;
+                            if (!Directory.Exists(pathString)) 
+                                Directory.CreateDirectory(pathString);
+                            FileUpload1.PostedFile.SaveAs(pathString+
+                             "\\file" + id + Path.GetExtension(FileUpload1.FileName));
                         }
                         else
                             Response.Write("Error. usuario no válido");

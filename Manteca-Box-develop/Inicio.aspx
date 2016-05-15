@@ -10,7 +10,7 @@
         CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre Archivo" />
-            <asp:BoundField DataField="ID" HeaderText="Likes" />
+            <asp:BoundField DataField="ID" HeaderText="likes" />
             <asp:BoundField DataField="descripcion" HeaderText="Propietario" />
         </Columns>
         <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
