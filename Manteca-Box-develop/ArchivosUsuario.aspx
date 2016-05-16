@@ -24,7 +24,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="">
                     <ItemTemplate>
-                        <asp:Button ID="Delete" Text="Borrar" runat="server" OnClick="Borrar_Click" />
+                            <asp:LinkButton ID="Borrar_Boton" runat="server" OnClick="Borrar_Click">
+                                <asp:Label ID="Borrar_Label" runat="server" Text="Borra"></asp:Label>
+                                <asp:HyperLink ID="Borra" runat="server" Text=""></asp:HyperLink>
+                            </asp:LinkButton>                    
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

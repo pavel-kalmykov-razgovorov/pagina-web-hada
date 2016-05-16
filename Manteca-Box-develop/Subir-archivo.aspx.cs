@@ -61,8 +61,8 @@ namespace Manteca_Box_develop
                             string pathString= path + user.ID;
                             if (!Directory.Exists(pathString)) 
                                 Directory.CreateDirectory(pathString);
-                            FileUpload1.PostedFile.SaveAs(pathString+
-                             "\\file" + id + Path.GetExtension(FileUpload1.FileName));
+                            FileUpload1.PostedFile.SaveAs(arx.Nombre);/*pathString+
+                             "\\file" + id + Path.GetExtension(FileUpload1.FileName));*/
                         }
                         else
                             Response.Write("Error. usuario no válido");

@@ -41,23 +41,15 @@ namespace Manteca_Box_develop
             {
                 HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga");
                 User_EN en = (User_EN)Session["user_session_data"];
-                Texto_Descarga.NavigateUrl = Server.MapPath("Files/"+ en.ID + "/file" + e.Row.Cells[0].Text);
+                Texto_Descarga.NavigateUrl = Server.MapPath("Files/" + e.Row.Cells[0].Text);
             }
-            /*FileInfo file = new FileInfo(Server.MapPath("Files/Inicio.aspx.cs"));
-            if (file.Exists)
-            {
-                Response.Clear();
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
-                Response.AddHeader("Content-Length", file.Length.ToString());
-                Response.ContentType = "application/octet-stream";
-                Response.Flush();
-                Response.TransmitFile(file.FullName);
-                Response.End();
-            }*/
         }
         protected void Borrar_Click(object sender, EventArgs e)
         {
-            FileInfo file = new FileInfo(Server.MapPath("Files/file9.md"));
+            LinkButton lb = (LinkButton)sender;
+            HyperLink h = (HyperLink)lb.FindControl("Borra");
+            string rutaborra = h.NavigateUrl;
+            FileInfo file = new FileInfo(rutaborra);
             if (file.Exists)
             {
                 file.Delete();
