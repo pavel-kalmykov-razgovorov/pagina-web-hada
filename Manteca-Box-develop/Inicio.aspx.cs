@@ -23,8 +23,7 @@ namespace Manteca_Box_develop
 
                 GridViewMostrarTodo.DataSource = fi.MostrarAllFiles();
                 GridViewMostrarTodo.DataBind();
-            //Pepe niño rata
-            //}
+       
         }
     }
 }
