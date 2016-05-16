@@ -12,7 +12,7 @@
         </span>
     </span>
     <div class="mdl-card__actions mdl-card--border">
-        <asp:Button ID="BusquedaUsuario" runat="server" Text="Buscar Usuario" OnClick="Button_Buscra_Click" CssClass="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" />
+        <asp:Button ID="BusquedaUsuario" runat="server" Text="Buscar Usuario" OnClick="Button_Buscra_Click" CssClass="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"/>
     </div>
         
 
@@ -20,8 +20,7 @@
         <div class="mdl-card__title">
             <h1 class="mdl-card__title-text">Archivos</h1>
         </div>
-        <asp:GridView ID="GridViewMostrarArchivosUsuario" runat="server" AutoGenerateColumns="False"
-            CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <asp:GridView ID="GridViewMostrarArchivosUsuario" runat="server" AutoGenerateColumns="False" CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombre Archivo" />
                 <asp:BoundField DataField="ID" HeaderText="Descripcion" />
