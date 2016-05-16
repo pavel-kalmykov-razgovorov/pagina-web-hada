@@ -73,6 +73,7 @@
     <Content Include="Principal.Master" />
     <Content Include="Control_Usuarios\ConfirmacionRegistro.aspx" />
     <Content Include="ArchivosUsuario.aspx" />
+    <Content Include="BusquedaUsuario.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="ArchivosUsuario.aspx.designer.cs">
       <DependentUpon>ArchivosUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusquedaUsuario.aspx.cs">
+      <DependentUpon>BusquedaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusquedaUsuario.aspx.designer.cs">
+      <DependentUpon>BusquedaUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

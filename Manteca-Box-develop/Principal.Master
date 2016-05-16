@@ -60,6 +60,9 @@
                         <asp:HyperLink ID="Link_Cerrar_Sesion" runat="server" NavigateUrl="~/Control_Usuarios/Login.aspx" CssClass="mdl-navigation__link">
                             <i class="material-icons">power_settings_new</i> Salir
                         </asp:HyperLink>
+                        <asp:HyperLink ID="Link_Arcivos_Usuario" runat="server" NavigateUrl="~/BusquedaUsuario.aspx" CssClass="mdl-navigation__link">
+                            <i class="material-icons">settings</i> Buscar Usuario
+                        </asp:HyperLink>
                     </nav>
                 </div>
                 <div class="mdl-layout__content">
