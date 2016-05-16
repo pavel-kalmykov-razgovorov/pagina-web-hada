@@ -18,11 +18,14 @@ namespace File_CAD_Class
     {
         ArrayList lista = new ArrayList();
 
+        /**
+         * Se encarga de mostrar los datos de un archivo al que le pasamos el id de ese archivo
+         **/ 
         public ArrayList MostrarFile(File_EN f)
         {   
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
-            SqlCommand com = new SqlCommand("Select * from Users where ID=" + f.ID, c);
+            SqlCommand com = new SqlCommand("Select * from Files where ID=" + f.ID, c);
             SqlDataReader dr = com.ExecuteReader();
 
 
@@ -44,6 +47,9 @@ namespace File_CAD_Class
             return lista;
         }
 
+        /**
+         * Se encarga de buscar en la base de datos,a través del id del archivo,si se encuentra o no en la base de datos
+         **/ 
         public bool BuscarFile(File_EN f)
         {
             bool encontrado = false;
@@ -74,6 +80,9 @@ namespace File_CAD_Class
             return encontrado;
         }
 
+        /**
+         * Se encarga de subir el archivo y meterlo en la base de datos
+         **/ 
         public int SubirFile(File_EN f)
         {
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
@@ -107,9 +116,12 @@ namespace File_CAD_Class
             return id;
         }
 
+        /**
+         * Se encarga de mostrar todos los archivos de un usuario en el que tenga el profile_visibility a 1
+         **/
         public ArrayList MostrarTodosArchivos(File_EN f)
         {
-            // Muestra todos los archivos de un usuario
+            
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             try
             {
@@ -135,9 +147,41 @@ namespace File_CAD_Class
 
         }
 
+        /**
+         * Se encarga de mostrar los datos de un archivo a traves del id del owner
+         **/ 
+        public ArrayList MostrarDatosArchivo(File_EN f)
+        {     
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            try
+            {
+                c.Open();
+                string select = "Select * from Files where Files.owner=" + f.Propietario;
+                SqlCommand com = new SqlCommand(select, c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    File_EN archivo = new File_EN();
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["description"].ToString();
+                    archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
+                    archivo.Propietario = Convert.ToByte(dr["owner"]);
+                    lista.Add(archivo);
+                }
+                dr.Close();
+            }
+            catch (Exception ex) { }
+            finally { c.Close(); }
+
+            return lista;
+
+        }
+
+        /**
+         * Se encarga de mostrar todos los archivos de un usuario
+         **/ 
         public ArrayList MostrarFilesUsuarioNombre(int propietario)
         {
-            // Muestra todos los archivos de un usuario
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             try
             {
@@ -154,7 +198,6 @@ namespace File_CAD_Class
                     archivo.Descripcion = dr["description"].ToString();
                     archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
                     archivo.Propietario = Convert.ToByte(dr["owner"]);
-                    //archivo.Ruta = "jshgdjkasg" + "/Files/" + archivo.Nombre;
                     lista.Add(archivo);
                 }
                 dr.Close();
@@ -166,6 +209,9 @@ namespace File_CAD_Class
 
         }
 
+        /**
+         * Se encarga de borrar el archivo de la base de datos
+         **/ 
         public void BorrarFile(File_EN f)
         {
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
@@ -174,7 +220,7 @@ namespace File_CAD_Class
             {
                 nueva_conexion.Open();
                 string delete = "";
-                delete = "Delete from Files where Files.ID = '" + f.ID;
+                delete = "Delete from Files where Files.ID = " + f.ID;
                 SqlCommand com = new SqlCommand(delete, nueva_conexion);
 
 
@@ -183,6 +229,10 @@ namespace File_CAD_Class
             catch (Exception ex) { }
             finally { nueva_conexion.Close(); }
         }
+
+        /**
+         * Se encarga de mostrar las versiones que tiene un archivo
+         **/ 
 
         public int newVersion(File_EN fe)
         {
@@ -218,11 +268,9 @@ namespace File_CAD_Class
             return Version;
         }
 
-        public void ShowVersions(File_EN f)
-        {
-
-        }
-
+        /**
+         * Se encarga de mostrar los likes que tiene asociada cada archivo
+         **/ 
         public ArrayList showLikes(File_EN f)
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
