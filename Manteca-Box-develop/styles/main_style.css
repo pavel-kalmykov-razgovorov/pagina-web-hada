@@ -8,14 +8,11 @@ body {
 	margin: 5em auto;
 }
 
-.mdl-list__item {
-	padding: 0 0 .5em 1em;
-}
+.mdl-list__item { padding: 0 0 .5em 1em; }
 
 .demo-card-wide > .mdl-card__title {
 	color: #fff;
 	background: #26A69A;
-	/*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
 }
 
 .demo-card-wide > .mdl-card__menu {
@@ -32,9 +29,7 @@ body {
 	font-family:Roboto;
 }
 
-.botton-subir {
-	margin-top: 1em;
-}
+.botton-subir {	margin-top: 1em; }
 
 .demo-card-wide.mdl-card {
     width: 90%;
@@ -45,16 +40,11 @@ body {
 .demo-card-wide > .mdl-card__title {
     color: #fff;
     background: #26A69A;
-    /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
 }
 
-.demo-card-wide > .mdl-card__menu {
-    color: #fff;
-}
+.demo-card-wide > .mdl-card__menu { color: #fff; }
 
-.boton-examinar {
-    margin-left: 40px;
-}
+.boton-examinar { margin-left: 40px; }
 
 .text-escoge {
     margin-top: 20px;
@@ -62,42 +52,28 @@ body {
     font-family:Roboto;
 }
 
-.botton-subir {
-    margin-top: 10px;
-}
+.botton-subir { margin-top: 10px; }
 
-.mdl-layout__header {
-    background: #26A69A;
-}
+.mdl-layout__header { background: #26A69A; }
 
-.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
-    padding-right: 0;
-}
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type { padding-right: 0; }
 
 .etiqueta-editar-perfil {
     margin-right: 1em;
     width: 6em;
     text-align: right;
 }
-.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-    display: inline-block;
-}
 
-.mdl-navigation__link i {
-    padding-right: .5em;
-}
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link { display: inline-block; }
 
-#Editar_Perfil_Genero label.mdl-radio {
-    margin-right: .5em;
-}
+.mdl-navigation__link i { padding-right: .5em; }
 
-.alinear{
-    text-align: center;
-}
-.icono-web {
-    width: 2.5em;
-}
+#Editar_Perfil_Genero label.mdl-radio { margin-right: .5em; }
 
-.listado-archivos {
-    width: 100%;
-}
+.alinear { text-align: center; }
+
+.icono-web { width: 2.5em; }
+
+.listado-archivos { width: 100%; }
+
+.id-oculto { display: none; }

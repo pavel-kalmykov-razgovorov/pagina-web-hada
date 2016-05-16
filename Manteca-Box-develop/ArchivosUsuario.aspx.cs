@@ -35,6 +35,7 @@ namespace Manteca_Box_develop
                 }
             //}
         }
+
         protected void GridViewMostrarArchivos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -42,8 +43,15 @@ namespace Manteca_Box_develop
                 HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga");
                 HyperLink Texto_Borra = (HyperLink)e.Row.FindControl("Borra");
                 User_EN en = (User_EN)Session["user_session_data"];
-                string rutaArchivo = "Files/" + en.ID + "/" + e.Row.Cells[1].Text;
-                string idArchivo = e.Row.Cells[0].Text;
+                string rutaArchivo = "Files/" + en.ID + "/" + HttpUtility.HtmlDecode(e.Row.Cells[2].Text);
+                string idArchivo = e.Row.Cells[1].Text;
+
+                Image icono = (Image)e.Row.FindControl("icono_fichero");
+                string extensionArchivo = Path.GetExtension(rutaArchivo);
+                extensionArchivo = extensionArchivo.Substring(1, extensionArchivo.Length-1); //quitar punto (carácter 0 del string)
+                string rutaIcono = Server.MapPath("/styles/format-icons/" + extensionArchivo + ".svg");
+                icono.ImageUrl = File.Exists(rutaIcono) ? "~/styles/format-icons/" + extensionArchivo + ".svg" : "~/styles/format-icons/file.svg";
+
                 Texto_Descarga.NavigateUrl = Server.MapPath(rutaArchivo);
                 Texto_Borra.NavigateUrl = Server.MapPath(rutaArchivo);
                 Texto_Borra.Text = idArchivo;
