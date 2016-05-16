@@ -107,6 +107,14 @@ namespace File_EN_Class
             deleteFile.BorrarFile(this);
         }
 
+        public ArrayList MostrarAllFiles()
+        {
+            File_CAD file = new File_CAD();
+            ArrayList a = new ArrayList();
+            a = file.MostrarTodosArchivos(this);
+            return a;
+        }
+
         public ArrayList MostrarFilesUsuarioNombreEn()
         {
             File_CAD ListaArchivos = new File_CAD();

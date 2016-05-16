@@ -19,7 +19,7 @@ namespace File_CAD_Class
         ArrayList lista = new ArrayList();
 
         public ArrayList MostrarFile(File_EN f)
-        {   //mostrar datos File
+        {   
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
             c.Open();
             SqlCommand com = new SqlCommand("Select * from Users where ID=" + f.ID, c);
@@ -86,8 +86,6 @@ namespace File_CAD_Class
                 string insert = "";
                 insert = "Insert Into Files(name,description,creation_date,owner) VALUES ('";
                 insert += f.Nombre + "','" + f.Descripcion + "','"+ahora+"','" + f.Propietario + "')";
-                //insert += f.Nombre + "','" + f.Descripcion + "','" + "','" + f.Propietario + "')";
-                
                 
                 SqlCommand com = new SqlCommand(insert, nueva_conexion);
                 
@@ -107,6 +105,34 @@ namespace File_CAD_Class
             catch (Exception ex) { }
             finally { nueva_conexion.Close(); }
             return id;
+        }
+
+        public ArrayList MostrarTodosArchivos(File_EN f)
+        {
+            // Muestra todos los archivos de un usuario
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            try
+            {
+                c.Open();
+                string select = "Select * from Files inner join Users on Files.owner = Users.ID where  profile_visibility = '1' order by creation_date ASC";
+                SqlCommand com = new SqlCommand(select, c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    File_EN archivo = new File_EN();
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["description"].ToString();
+                    archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
+                    archivo.Propietario = Convert.ToByte(dr["owner"]);
+                    lista.Add(archivo);
+                }
+                dr.Close();
+            }
+            catch (Exception ex) { }
+            finally { c.Close(); }
+
+            return lista;
+
         }
 
         public ArrayList MostrarFilesUsuarioNombre(int propietario)
