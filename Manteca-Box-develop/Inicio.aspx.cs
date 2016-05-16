@@ -16,6 +16,7 @@ namespace Manteca_Box_develop
  
     public partial class Inicio : System.Web.UI.Page
     {
+        //Mostraremos los archivos al cargar la pagina
         protected void Page_Load(object sender, EventArgs e)
         {
             

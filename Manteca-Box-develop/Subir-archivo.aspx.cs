@@ -37,13 +37,14 @@ namespace Manteca_Box_develop
 
         }
 
+        //Metodo conectado para subir un archivo
         protected void Button_Upload_Click(object sender, EventArgs e)
         {
 
             if (IsPostBack)
             {
                 
-                String path = Server.MapPath("Files/");
+                String path = Server.MapPath("Files/"); //Ruta donde subir el archivo
                 if (FileUpload1.HasFile)
                 {
                     try
@@ -54,13 +55,13 @@ namespace Manteca_Box_develop
                             
                             File_EN arx = new File_EN();
                             
-                            user.LeerUsuario();
+                            user.LeerUsuario(); //Leemos los datos del usuario
                             arx.Nombre = FileUpload1.FileName;
                             arx.Propietario = user.ID;
                             int id=arx.SubirArchivo();
-                            string pathString = path + "/" + user.ID + "/";
+                            string pathString = path + "/" + user.ID + "/"; //Se guardara dentro de una carpeta con el id del usuario
                             Directory.CreateDirectory(pathString);
-                            FileUpload1.PostedFile.SaveAs(pathString + arx.Nombre);
+                            FileUpload1.PostedFile.SaveAs(pathString + arx.Nombre); //Guardamos el archivo en la ruta correspondiente
                         }
                         else
                             Response.Write("Error. usuario no válido");

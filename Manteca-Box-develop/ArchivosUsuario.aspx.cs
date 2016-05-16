@@ -21,7 +21,7 @@ namespace Manteca_Box_develop
            // if (Request.QueryString.Count > 0)
            // {
            //     if (Request.QueryString.Keys[0] == "ID")
-                User_EN en = (User_EN)Session["user_session_data"];
+                User_EN en = (User_EN)Session["user_session_data"]; 
                 if (en != null)
                 {
                     en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
@@ -36,15 +36,16 @@ namespace Manteca_Box_develop
             //}
         }
 
+        //Con esta función podremos acceder a los datos de la tabla de los archivos
         protected void GridViewMostrarArchivos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga");
-                HyperLink Texto_Borra = (HyperLink)e.Row.FindControl("Borra");
+                HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga"); //Creamos el link para la descargar
+                HyperLink Texto_Borra = (HyperLink)e.Row.FindControl("Borra"); //Creamos el link para borrar el archivo
                 User_EN en = (User_EN)Session["user_session_data"];
-                string rutaArchivo = "Files/" + en.ID + "/" + HttpUtility.HtmlDecode(e.Row.Cells[2].Text);
-                string idArchivo = e.Row.Cells[1].Text;
+                string rutaArchivo = "Files/" + en.ID + "/" + HttpUtility.HtmlDecode(e.Row.Cells[2].Text); //Guardamos la ruta del archivo
+                string idArchivo = e.Row.Cells[1].Text; //Guardamos el id del archivo
 
                 Image icono = (Image)e.Row.FindControl("icono_fichero");
                 string extensionArchivo = Path.GetExtension(rutaArchivo);
@@ -52,27 +53,31 @@ namespace Manteca_Box_develop
                 string rutaIcono = Server.MapPath("/styles/format-icons/" + extensionArchivo + ".svg");
                 icono.ImageUrl = File.Exists(rutaIcono) ? "~/styles/format-icons/" + extensionArchivo + ".svg" : "~/styles/format-icons/file.svg";
 
-                Texto_Descarga.NavigateUrl = Server.MapPath(rutaArchivo);
-                Texto_Borra.NavigateUrl = Server.MapPath(rutaArchivo);
+                Texto_Descarga.NavigateUrl = Server.MapPath(rutaArchivo); //Copiamos la ruta del archivo a la URL para descargar
+                Texto_Borra.NavigateUrl = Server.MapPath(rutaArchivo); //Lo mismo para borrar
                 Texto_Borra.Text = idArchivo;
             }
         }
+        //Borrará el archivo
         protected void Borrar_Click(object sender, EventArgs e)
         {
-            LinkButton lb = (LinkButton)sender;
-            HyperLink h = (HyperLink)lb.FindControl("Borra");
+            LinkButton lb = (LinkButton)sender; //Creamos un linkButton con el objeto emisor(sender)
+            HyperLink h = (HyperLink)lb.FindControl("Borra"); //Conectamos el linkButton al link de borrar
             string rutaborra = h.NavigateUrl;
             File_EN f_bbdd = new File_EN();
             f_bbdd.ID = Convert.ToInt32(h.Text);
-            FileInfo file = new FileInfo(rutaborra);
+            FileInfo file = new FileInfo(rutaborra); //Creamos una variable de tipo FileInfo con la ruta del archivo a borrar, 
+                                                     //que se utiliza para proporcionar métodos
+                                                     // y propiedades para borrar entre ot
+
             if (file.Exists)
             {
-                file.Delete();
-                f_bbdd.BorrarArchivo();
+                file.Delete(); //Borramos el archivo
+                f_bbdd.BorrarArchivo(); //Borramos el archivo de la base de datos
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
-
+        //Descargaremos el archivo con este método
         protected void Descarga_Boton_Click(object sender, EventArgs e)
         {
             LinkButton lb = (LinkButton)sender;
