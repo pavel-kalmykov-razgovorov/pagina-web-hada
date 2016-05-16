@@ -148,7 +148,7 @@ namespace File_CAD_Class
             {
                 nueva_conexion.Open();
                 string delete = "";
-                delete = "Delete from Files where Files.ID = '" + f.ID;
+                delete = "Delete from Files where Files.ID = " + f.ID;
                 SqlCommand com = new SqlCommand(delete, nueva_conexion);
 
 

@@ -40,8 +40,13 @@ namespace Manteca_Box_develop
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga");
+                HyperLink Texto_Borra = (HyperLink)e.Row.FindControl("Borra");
                 User_EN en = (User_EN)Session["user_session_data"];
-                Texto_Descarga.NavigateUrl = Server.MapPath("Files/" + e.Row.Cells[0].Text);
+                string rutaArchivo = "Files/" + en.ID + "/" + e.Row.Cells[1].Text;
+                string idArchivo = e.Row.Cells[0].Text;
+                Texto_Descarga.NavigateUrl = Server.MapPath(rutaArchivo);
+                Texto_Borra.NavigateUrl = Server.MapPath(rutaArchivo);
+                Texto_Borra.Text = idArchivo;
             }
         }
         protected void Borrar_Click(object sender, EventArgs e)
@@ -49,10 +54,14 @@ namespace Manteca_Box_develop
             LinkButton lb = (LinkButton)sender;
             HyperLink h = (HyperLink)lb.FindControl("Borra");
             string rutaborra = h.NavigateUrl;
+            File_EN f_bbdd = new File_EN();
+            f_bbdd.ID = Convert.ToInt32(h.Text);
             FileInfo file = new FileInfo(rutaborra);
             if (file.Exists)
             {
                 file.Delete();
+                f_bbdd.BorrarArchivo();
+                Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
 
