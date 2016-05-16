@@ -128,6 +128,7 @@ namespace File_CAD_Class
                     archivo.Descripcion = dr["description"].ToString();
                     archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
                     archivo.Propietario = Convert.ToByte(dr["owner"]);
+                    //archivo.Ruta = "jshgdjkasg" + "/Files/" + archivo.Nombre;
                     lista.Add(archivo);
                 }
                 dr.Close();

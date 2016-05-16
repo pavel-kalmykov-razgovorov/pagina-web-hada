@@ -35,9 +35,15 @@ namespace Manteca_Box_develop
                 }
             //}
         }
-        protected void Descargar_Click(object sender, EventArgs e)
+        protected void GridViewMostrarArchivos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            FileInfo file = new FileInfo(Server.MapPath("Files/Inicio.aspx.cs"));
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga");
+                User_EN en = (User_EN)Session["user_session_data"];
+                Texto_Descarga.NavigateUrl = Server.MapPath("Files/"+ en.ID + "/file" + e.Row.Cells[0].Text);
+            }
+            /*FileInfo file = new FileInfo(Server.MapPath("Files/Inicio.aspx.cs"));
             if (file.Exists)
             {
                 Response.Clear();
@@ -47,7 +53,7 @@ namespace Manteca_Box_develop
                 Response.Flush();
                 Response.TransmitFile(file.FullName);
                 Response.End();
-            }
+            }*/
         }
         protected void Borrar_Click(object sender, EventArgs e)
         {
@@ -55,6 +61,24 @@ namespace Manteca_Box_develop
             if (file.Exists)
             {
                 file.Delete();
+            }
+        }
+
+        protected void Descarga_Boton_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            HyperLink h = (HyperLink)lb.FindControl("Descarga");
+            string rutaDescarga = h.NavigateUrl;
+            FileInfo fi = new FileInfo(rutaDescarga);
+            if (fi.Exists)
+            {
+                Response.Clear();
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + fi.Name);
+                Response.AddHeader("Content-Length", fi.Length.ToString());
+                Response.ContentType = "application/octet-stream";
+                Response.Flush();
+                Response.TransmitFile(fi.FullName);
+                Response.End();
             }
         }
     }

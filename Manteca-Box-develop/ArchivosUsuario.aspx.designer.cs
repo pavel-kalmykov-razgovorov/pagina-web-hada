@@ -15,19 +15,10 @@ namespace Manteca_Box_develop {
         /// <summary>
         /// Control GridViewMostrarArchivos.
         /// </summary>
-        /// <remarks>//
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewMostrarArchivos;
-        
-        /// <summary>
-        /// Control Descargar.
-        /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Descargar;
+        protected global::System.Web.UI.WebControls.GridView GridViewMostrarArchivos;
     }
 }
