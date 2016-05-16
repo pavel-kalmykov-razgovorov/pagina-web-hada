@@ -16,8 +16,8 @@
 
                 <asp:TemplateField HeaderText="">
                     <ItemTemplate>
-                        <asp:LinkButton ID="Descarga_Boton" runat="server" OnClick="Descarga_Boton_Click">
-                            <asp:Label ID="Descarga_Label" runat="server" Text="Descarga"></asp:Label>
+                        <asp:LinkButton ID="Descarga_Boton" runat="server" OnClick="Descarga_Boton_Click" CssClass="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <i class="material-icons">file_download</i>
                             <asp:HyperLink ID="Descarga" runat="server" Text=""></asp:HyperLink>
                         </asp:LinkButton>
                     </ItemTemplate>
