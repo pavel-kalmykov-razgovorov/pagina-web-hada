@@ -9,7 +9,13 @@
         </div>
         <asp:GridView ID="GridViewMostrarArchivos" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridViewMostrarArchivos_RowDataBound" CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp listado-archivos">
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="id"/>
+                <asp:TemplateField >
+                    <ItemTemplate>
+                        <asp:Image ID="icono_fichero" runat="server"/>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:BoundField DataField="ID" HeaderText="id" ItemStyle-CssClass="id-oculto" HeaderStyle-CssClass="id-oculto" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre Archivo" />
                 <asp:BoundField DataField="Fecha_creacion" HeaderText="Fecha Creación" />
                 <asp:BoundField DataField="Propietario" HeaderText="Propietario" />
@@ -24,10 +30,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="">
                     <ItemTemplate>
-                            <asp:LinkButton ID="Borrar_Boton" runat="server" OnClick="Borrar_Click" CssClass="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                                <i class="material-icons">delete</i>
-                                <asp:HyperLink ID="Borra" runat="server" Visible="false"></asp:HyperLink>
-                            </asp:LinkButton>                    
+                        <asp:LinkButton ID="Borrar_Boton" runat="server" OnClick="Borrar_Click" CssClass="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <i class="material-icons">delete</i>
+                            <asp:HyperLink ID="Borra" runat="server" Visible="false"></asp:HyperLink>
+                        </asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

@@ -11,7 +11,7 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Charset = "utf-8";
         }
     }
 }
