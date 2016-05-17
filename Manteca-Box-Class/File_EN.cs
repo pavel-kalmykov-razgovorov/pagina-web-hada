@@ -86,17 +86,7 @@ namespace File_EN_Class
 
             return a;
         }
-<<<<<<< HEAD
 
-=======
-        //Declaramos la funcion buscar archivo donde llama al cad correspondiente
-        public void BuscarArchivo()
-        {
-            File_CAD findFile = new File_CAD();
-            findFile.BuscarFile(this);
-        }
-        //Declaramos la funcion subir archivo donde llama al cad correspondiente
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
         public int SubirArchivo()
         {
             File_CAD upFile = new File_CAD();
@@ -116,7 +106,6 @@ namespace File_EN_Class
             a = file.MostrarTodosArchivos(this);
             return a;
         }
-<<<<<<< HEAD
 
         public ArrayList BuscarFiles(string busqueda)
         {
@@ -127,9 +116,7 @@ namespace File_EN_Class
             return a;
         }
 
-=======
         //Declaramos la funcion mostrar datos de un archivo donde llama al cad correspondiente
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
         public ArrayList MostrarDatosUser()
         {
             File_CAD file = new File_CAD();

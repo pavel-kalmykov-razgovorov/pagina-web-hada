@@ -24,6 +24,7 @@
                     <!-- Top row, always visible -->
                     <div class="mdl-layout__header-row">
                         <!-- Title -->
+                        <asp:Image ID="Logo" runat="server" ImageUrl="~/styles/icono-mb.png"  CssClass="icono-web"/>
                         <span class="mdl-layout-title">MantecaBox</span>
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">

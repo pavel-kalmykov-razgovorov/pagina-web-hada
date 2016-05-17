@@ -7,7 +7,6 @@
         <div class="mdl-card__title">
             <h1 class="mdl-card__title-text">Destacados</h1>
         </div>
-<<<<<<< HEAD
         <asp:GridView ID="GridViewMostrarTodo" runat="server" AutoGenerateColumns="False" CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombre Archivo" />
@@ -17,16 +16,5 @@
             </Columns>
             <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
         </asp:GridView>
-=======
-    <asp:GridView ID="GridViewMostrarTodo" runat="server" AutoGenerateColumns="False" CssClass="mdl-data-table mdl-js-data-table mdl-shadow--2dp listado-archivos">
-        <Columns>
-            <asp:BoundField DataField="nombre" HeaderText="Nombre Archivo" />
-            <asp:BoundField DataField="ID" HeaderText="Descripcion" />
-            <asp:BoundField DataField="descripcion" HeaderText="Fecha creacion" />
-            <asp:BoundField HeaderText="Propietario" />
-        </Columns>
-        <RowStyle CssClass="mdl-data-table__cell--non-numeric" />
-    </asp:GridView>
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
     </div>
 </asp:Content>

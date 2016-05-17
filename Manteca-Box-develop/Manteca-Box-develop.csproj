@@ -63,10 +63,7 @@
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
     <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
-<<<<<<< HEAD
     <Content Include="BusquedaArchivos.aspx" />
-=======
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
     <Content Include="Inicio.aspx" />
     <Content Include="styles\cloud_background.png" />
     <Content Include="styles\icono-mb.png" />
@@ -97,7 +94,6 @@
     <Compile Include="Control_Usuarios\Editar-Perfil.aspx.designer.cs">
       <DependentUpon>Editar-Perfil.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="BusquedaArchivos.aspx.cs">
       <DependentUpon>BusquedaArchivos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,8 +101,6 @@
     <Compile Include="BusquedaArchivos.aspx.designer.cs">
       <DependentUpon>BusquedaArchivos.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

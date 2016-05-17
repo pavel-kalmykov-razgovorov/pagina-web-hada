@@ -72,7 +72,10 @@ body {
 
 .alinear { text-align: center; }
 
-.icono-web { width: 2.5em; }
+.icono-web {
+    width: 2.5em;
+    margin-right: .5em;
+}
 
 .listado-archivos { width: 100%; }
 

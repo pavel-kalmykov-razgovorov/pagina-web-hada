@@ -13,15 +13,9 @@ namespace Manteca_Box_develop
         }
 
         /*
-<<<<<<< HEAD
          * Una vez el usuario se ha introducido con éxito en la base de datos procedemos a 
          * enviarle el email de confirmacion
          */
-=======
-        * Una vez el usuario se ha introducido con éxito en la base de datos procedemos a 
-        * enviarle el email de confirmacion
-        */
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
         protected void EnviarCorreoConfirmacion()
         {
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");//Creamos el cliente
@@ -56,15 +50,9 @@ namespace Manteca_Box_develop
         }
 
         /* Una vez el usuario ha rellenado todos los campos solicitados en el apartado del registro
-<<<<<<< HEAD
          * correctamente, es decir, el email tiene formato de email, las contraseñas coinciden...proceemos a
          * guardar el usuario en la base de datos
          */
-=======
-        * correctamente, es decir, el email tiene formato de email, las contraseñas coinciden...proceemos a
-        * guardar el usuario en la base de datos
-        */
->>>>>>> 46a9ff28f2816f1a044b1c4a287684cafd22ff18
         protected void Button_Register_Click(object sender, EventArgs e)
         {
             EmailExistsError_Register.Visible = 
