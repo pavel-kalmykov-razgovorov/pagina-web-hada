@@ -16,7 +16,9 @@ namespace Manteca_Box_develop
  
     public partial class Inicio : System.Web.UI.Page
     {
-        //Mostraremos los archivos al cargar la pagina
+        /*
+         * AL cargar la pagina de inicio, se mostraran todos los archivos de la base de datos que sean publicos
+         */
         protected void Page_Load(object sender, EventArgs e)
         {
                 File_EN fi = new File_EN();
