@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <!-- Bottom row, not visible on scroll -->
-                    <div class="mdl-layout__header-row">
+                    <div id="Barra_Secundaria" class="mdl-layout__header-row" runat="server" visible="true">
                         <div class="mdl-layout-spacer"></div>
                         <!-- Navigation -->
                         <nav class="mdl-navigation">
@@ -45,6 +45,7 @@
                         </nav>
                     </div>
                 </header>
+                <!-- Menú hamburguesa -->
                 <div class="mdl-layout__drawer">
                     <span class="mdl-layout-title">Menú</span>
                     <nav class="mdl-navigation">
@@ -57,11 +58,11 @@
                         <asp:HyperLink ID="Link_Editar_Perfil" runat="server" NavigateUrl="~/Control_Usuarios/Editar-Perfil.aspx" CssClass="mdl-navigation__link">
                             <i class="material-icons">settings</i> Editar Perfil
                         </asp:HyperLink>
-                        <asp:HyperLink ID="Link_Cerrar_Sesion" runat="server" NavigateUrl="~/Control_Usuarios/Login.aspx" CssClass="mdl-navigation__link">
-                            <i class="material-icons">power_settings_new</i> Salir
-                        </asp:HyperLink>
                         <asp:HyperLink ID="Link_Arcivos_Usuario" runat="server" NavigateUrl="~/BusquedaUsuario.aspx" CssClass="mdl-navigation__link">
                             <i class="material-icons">account_circle</i> Buscar Usuario
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="Link_Cerrar_Sesion" runat="server" NavigateUrl="~/Control_Usuarios/Login.aspx" CssClass="mdl-navigation__link" Visible="false">
+                            <i class="material-icons">power_settings_new</i> Salir
                         </asp:HyperLink>
                     </nav>
                 </div>
