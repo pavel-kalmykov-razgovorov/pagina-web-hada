@@ -24,8 +24,10 @@
                     <!-- Top row, always visible -->
                     <div class="mdl-layout__header-row">
                         <!-- Title -->
-                        <asp:Image ID="Logo" runat="server" ImageUrl="~/styles/icono-mb.png"  CssClass="icono-web"/>
-                        <span class="mdl-layout-title">MantecaBox</span>
+                        <asp:HyperLink ID="Link_Inicio" runat="server" NavigateUrl="~/Inicio.aspx" CssClass="mdl-navigation__link">
+                            <asp:Image ID="Logo" runat="server" ImageUrl="~/styles/icono-mb.png"  CssClass="icono-web"/>
+                            <span class="mdl-layout-title titulo">MantecaBox</span>
+                        </asp:HyperLink>
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
                             <asp:Label AssociatedControlID="Busqueda" runat="server" CssClass="mdl-button mdl-js-button mdl-button--icon">

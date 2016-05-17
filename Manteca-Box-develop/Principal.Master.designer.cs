@@ -31,6 +31,15 @@ namespace Manteca_Box_develop {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control Link_Inicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Link_Inicio;
+        
+        /// <summary>
         /// Control Logo.
         /// </summary>
         /// <remarks>
