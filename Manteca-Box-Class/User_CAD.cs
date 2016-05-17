@@ -19,6 +19,10 @@ namespace User_CAD_Class
     {
         public ArrayList lista = new ArrayList();
 
+        /**
+         * Se encarga de introducir un usuario en la base de datos 
+         * 
+         */
         public void InsertarUser(User_EN u)
         {
 
@@ -36,10 +40,13 @@ namespace User_CAD_Class
 
                 com.ExecuteNonQuery();
             }
-            catch (Exception ex) {  }
+            catch (Exception ex) { ex.Message.ToString(); }
             finally { nueva_conexion.Close(); }
         }
 
+        /**
+         * Se encarga de mostrar el usuario que se quiere mostrar a través de su ID
+         */ 
         public ArrayList MostrarUser(User_EN u)
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
@@ -69,6 +76,9 @@ namespace User_CAD_Class
             return lista;
         }
 
+        /**
+         * Se encarga de borrar el usuario, si existe en la base de datos, a través de su ID
+         **/
         public void BorrarUser(User_EN u)
         {
 
@@ -84,7 +94,7 @@ namespace User_CAD_Class
 
                 com.ExecuteNonQuery();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { ex.Message.ToString(); }
             finally { nueva_conexion.Close(); }
         }
 
@@ -111,19 +121,21 @@ namespace User_CAD_Class
                     usuario.NombreUsu = dr["username"].ToString();
                     usuario.Contraseña = dr["password"].ToString();
                     usuario.Edad = Convert.ToInt16(dr["age"]);
-                    //usuario.Genero = Convert.ToBoolean(dr["gender"]);
                     usuario.Localidad = dr["locality"].ToString();
                     usuario.Visibilidad_perfil = Convert.ToBoolean(dr["profile_visibility"]);
                     usuario.Verified = Convert.ToBoolean(dr["verified"]);
                 }
                 dr.Close();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { ex.Message.ToString(); }
             finally { nueva_conexion.Close(); }
 
             return usuario;
         }
 
+        /**
+         * Se encarga de listar todos los amigos que tiene un usuario
+         **/ 
         public ArrayList ListarAmigos()
         {
             SqlConnection c = new SqlConnection(Constants.nombreConexion);
@@ -141,6 +153,9 @@ namespace User_CAD_Class
             return lista;
         }
 
+        /**
+         * Se encarga de mostrarnos todos los datos del usuario y contraseña que le pasamos
+         **/ 
         public User_EN LeerUser(User_EN u)
         {
 
@@ -173,12 +188,15 @@ namespace User_CAD_Class
                 dr.Close();
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { ex.Message.ToString(); }
             finally { nueva_conexion.Close(); }
 
             return usuario;
         }
 
+        /**
+         * Se encarga de una vez recibido el email y darle al link, poner al que le perteneza ese usuario el verified a 1
+         **/ 
         public void confirmacionUser(User_EN u)
         {
             SqlConnection nueva_conexion = new SqlConnection(Constants.nombreConexion);
@@ -193,9 +211,12 @@ namespace User_CAD_Class
 
                 com.ExecuteNonQuery();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { ex.Message.ToString(); }
             finally { nueva_conexion.Close(); }
         }
+        /**
+         * Se encarga de actualizar el usuario si sufre alguna modificacion en alguno de sus campos
+         **/ 
 
         public void actualizarUser(User_EN u)
         {
@@ -222,25 +243,6 @@ namespace User_CAD_Class
             finally { nueva_conexion.Close(); }
         }
 
-        public void addLike()
-        {
-
-        }
-
-        public void deleteLike()
-        {
-
-        }
-
-        public void addFriends()
-        {
-
-        }
-
-        public void deleteFriends()
-        {
-
-        }
 
     }
 }
