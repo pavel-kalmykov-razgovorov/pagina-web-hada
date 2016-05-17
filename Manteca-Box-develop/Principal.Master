@@ -27,11 +27,11 @@
                         <span class="mdl-layout-title">MantecaBox</span>
                         <div class="mdl-layout-spacer"></div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-                            <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                            <asp:Label AssociatedControlID="Busqueda" runat="server" CssClass="mdl-button mdl-js-button mdl-button--icon">
                                 <i class="material-icons">search</i>
-                            </label>
+                            </asp:Label>
                             <div class="mdl-textfield__expandable-holder">
-                                <input class="mdl-textfield__input" type="search" name="sample" autocomplete="off" id="waterfall-exp">
+                                <asp:TextBox ID="Busqueda" runat="server" TextMode="Search" CssClass="mdl-textfield__input" OnTextChanged="Busqueda_TextChanged"></asp:TextBox>
                             </div>
                         </div>
                     </div>

@@ -89,12 +89,6 @@ namespace File_EN_Class
             return a;
         }
 
-        public void BuscarArchivo()
-        {
-            File_CAD findFile = new File_CAD();
-            findFile.BuscarFile(this);
-        }
-
         public int SubirArchivo()
         {
             File_CAD upFile = new File_CAD();
@@ -112,6 +106,15 @@ namespace File_EN_Class
             File_CAD file = new File_CAD();
             ArrayList a = new ArrayList();
             a = file.MostrarTodosArchivos(this);
+            return a;
+        }
+
+        public ArrayList BuscarFiles(string busqueda)
+        {
+            Nombre = busqueda;
+            File_CAD cad = new File_CAD();
+            ArrayList a = new ArrayList();
+            a = cad.BuscarArchivos(this);
             return a;
         }
 

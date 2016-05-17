@@ -16,7 +16,6 @@
                         <i class="material-icons  mdl-list__item-avatar">person</i>
                         <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <asp:TextBox ID="user_name_register" runat="server" CssClass="mdl-textfield__input"></asp:TextBox>
-                            <!--<input class="mdl-textfield__input" type="text" id="username-login-input">-->
                             <label class="mdl-textfield__label" for="username-login-input">Usuario</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" runat="server" ControlToValidate="user_name_register" ErrorMessage="Introduce el nombre de usuario" CssClass="mdl-textfield__error"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegExUsuario" runat="server" ErrorMessage="No se admiten caracteres especiales o nombres muy largos o cortos" ControlToValidate="user_name_register" ValidationExpression="\w{4,30}" CssClass="mdl-textfield__error"></asp:RegularExpressionValidator>

@@ -20,5 +20,11 @@ namespace Manteca_Box_develop
                 Barra_Secundaria.Visible = false;
             }
         }
+
+        protected void Busqueda_TextChanged(object sender, EventArgs e)
+        {
+            TextBox a = (TextBox)sender;
+            Response.Redirect("~/BusquedaArchivos.aspx?query=" + a.Text);
+        }
     }
 }

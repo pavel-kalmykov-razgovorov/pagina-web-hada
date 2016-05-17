@@ -147,6 +147,32 @@ namespace File_CAD_Class
 
         }
 
+        public ArrayList BuscarArchivos(File_EN f)
+        {
+            lista = new ArrayList();
+            SqlConnection c = new SqlConnection(Constants.nombreConexion);
+            try
+            {
+                c.Open();
+                string select = "Select * from files where name like '%" + f.Nombre + "%'";
+                SqlCommand com = new SqlCommand(select, c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    File_EN archivo = new File_EN();
+                    archivo.Nombre = dr["name"].ToString();
+                    archivo.Descripcion = dr["description"].ToString();
+                    archivo.Fecha_creacion = Convert.ToDateTime(dr["creation_date"]);
+                    archivo.Propietario = Convert.ToByte(dr["owner"]);
+                    lista.Add(archivo);
+                }
+            }
+            catch (Exception ex) { }
+            finally { c.Close(); }
+
+            return lista;
+        }
+
         /**
          * Se encarga de mostrar los datos de un archivo a traves del id del owner
          **/ 
