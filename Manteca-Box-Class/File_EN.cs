@@ -115,18 +115,20 @@ namespace File_EN_Class
             return a;
         }
 
+        public ArrayList MostrarDatosUser()
+        {
+            File_CAD file = new File_CAD();
+            ArrayList a = new ArrayList();
+            a = file.MostrarDatosArchivo(this);
+            return a;
+        }
+
         public ArrayList MostrarFilesUsuarioNombreEn()
         {
             File_CAD ListaArchivos = new File_CAD();
             ArrayList a = new ArrayList();
             a = ListaArchivos.MostrarFilesUsuarioNombre(this.Propietario);
             return a;
-        }
-
-        public void MostrarVersiones()
-        {
-            File_CAD showVersion = new File_CAD();
-            showVersion.ShowVersions(this);
         }
 
         public ArrayList MostrarLikes()
