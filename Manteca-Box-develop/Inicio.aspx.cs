@@ -18,15 +18,11 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User_EN en = (User_EN)Session["user_session_data"];
-            //if (en != null)
-            //{
-                //en.LeerUsuario();  //lee todos los datos del usuario de la base de datos, ya que la pagina solo proporciona login y password
-                // Muestra los archivos publicos
+            
                 File_EN fi = new File_EN();
-                
-                GridViewMostrarLikes.DataSource = fi.MostrarLikes();
-                GridViewMostrarLikes.DataBind();
+
+                GridViewMostrarTodo.DataSource = fi.MostrarAllFiles();
+                GridViewMostrarTodo.DataBind();
 
             //}
         }

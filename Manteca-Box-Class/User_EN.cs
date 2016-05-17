@@ -165,29 +165,7 @@ namespace User_EN_Class
             actUser.actualizarUser(this);
         }
 
-        public void AñadirLike()
-        {
-            User_CAD addLike = new User_CAD();
-            addLike.addLike();
-        }
-
-        public void BorrarLike()
-        {
-            User_CAD deleteLike = new User_CAD();
-            deleteLike.deleteLike();
-        }
-
-        public void AgregarAmigo()
-        {
-            User_CAD addFriend = new User_CAD();
-            addFriend.addFriends();
-        }
-
-        public void BorrarAmigo()
-        {
-            User_CAD deleteFriend = new User_CAD();
-            deleteFriend.deleteFriends();
-        }
+        
 
         public User_EN()
         {

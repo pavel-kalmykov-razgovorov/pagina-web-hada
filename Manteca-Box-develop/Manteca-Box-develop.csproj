@@ -63,6 +63,7 @@
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
     <Content Include="Control_Usuarios\Editar-Perfil.aspx" />
+    <Content Include="Formulario web1.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="styles\cloud_background.png" />
     <Content Include="styles\icono-mb.png" />
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="Control_Usuarios\Editar-Perfil.aspx.designer.cs">
       <DependentUpon>Editar-Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario web1.aspx.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario web1.aspx.designer.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

@@ -114,7 +114,7 @@ namespace File_CAD_Class
             try
             {
                 c.Open();
-                string select = "Select * from Files inner join User on Files.owner = Users.ID where owner = " + f.Propietario + " and profile_visibility = true order by creation_date ASC";
+                string select = "Select * from Files inner join Users on Files.owner = Users.ID where  profile_visibility = '1' order by creation_date ASC";
                 SqlCommand com = new SqlCommand(select, c);
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
