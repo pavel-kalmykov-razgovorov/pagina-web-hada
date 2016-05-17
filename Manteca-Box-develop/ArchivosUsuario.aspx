@@ -11,7 +11,7 @@
             <Columns>
                 <asp:TemplateField >
                     <ItemTemplate>
-                        <asp:Image ID="icono_fichero" runat="server"/>
+                        <asp:Image ID="icono_fichero" runat="server" CssClass="icono-listado-archvios"/>
                     </ItemTemplate>
                 </asp:TemplateField>
 

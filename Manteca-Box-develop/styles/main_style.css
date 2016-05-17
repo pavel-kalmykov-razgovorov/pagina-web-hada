@@ -80,3 +80,9 @@ body {
 .listado-archivos { width: 100%; }
 
 .id-oculto { display: none; }
+
+.icono-listado-archvios {
+    height: 3em;
+    display: block;
+    margin: auto;
+}
