@@ -25,6 +25,9 @@ namespace Manteca_Box_develop
             Editar_Perfil_NoMostrar.InputAttributes.Add("class", "mdl-radio__button");
         }
 
+        /*
+         * Esta funcion carga los datos del usuario en los TextBox para que el usuario pueda ver sus datos personales
+         */
         protected void CargarDatos(User_EN en)
         {
             Editar_Perfil_Usuario.Text = en.NombreUsu;
@@ -45,7 +48,7 @@ namespace Manteca_Box_develop
             Editar_Perfil_ID.Text = en.ID.ToString();
         }
 
-        /**
+        /*
          * Cuando se dé click al botón Editar Datos, todas las entradas pasarán a ser editables
          * También el botón Editar Datos se esconderá para dar paso a Guardar Datos
          */
@@ -69,6 +72,10 @@ namespace Manteca_Box_develop
             Editar_Perfil_Guardar.Visible = true;
         }
 
+        /*
+         * Esta funcion esta conectada al boton de guardar cambios por si el usuario quiere cambiar algun
+         * dato de su perfil
+         */
         protected void Editar_Perfil_Guardar_Click(object sender, EventArgs e)
         {
             if(Editar_Perfil_Visibilidad_Switch.Checked)
@@ -113,7 +120,7 @@ namespace Manteca_Box_develop
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx"); //Si no se ha iniciado sesion, no podras ver tu pefil y se redireccionara a la pagina de iniciar sesion
             }
         }
     }

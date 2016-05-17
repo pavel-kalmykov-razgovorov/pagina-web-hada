@@ -36,7 +36,10 @@ namespace Manteca_Box_develop
             //}
         }
 
-        //Con esta función podremos acceder a los datos de la tabla de los archivos
+        /*
+         * Esta función sirve para controlar los datos de la tabla y poder acceder
+         * a los datos de los archivos para ser descargados o borrados
+         */
         protected void GridViewMostrarArchivos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -44,9 +47,12 @@ namespace Manteca_Box_develop
                 HyperLink Texto_Descarga = (HyperLink)e.Row.FindControl("Descarga"); //Creamos el link para la descargar
                 HyperLink Texto_Borra = (HyperLink)e.Row.FindControl("Borra"); //Creamos el link para borrar el archivo
                 User_EN en = (User_EN)Session["user_session_data"];
-                string rutaArchivo = "Files/" + en.ID + "/" + HttpUtility.HtmlDecode(e.Row.Cells[2].Text); //Guardamos la ruta del archivo
+                string rutaArchivo = "Files/" + en.ID + "/" + HttpUtility.HtmlDecode(e.Row.Cells[2].Text); /*Guardamos la ruta del archivo
+                utilizando HttpUtility.HtmlDecode  que sirve para decodificar carácteres especiales (&, ñ, etc.)*/
                 string idArchivo = e.Row.Cells[1].Text; //Guardamos el id del archivo
-
+                /*
+                 * Así buscamos y encontramos un icono de miniatura para el fichero en función de la extensión del archivo
+                 */
                 Image icono = (Image)e.Row.FindControl("icono_fichero");
                 string extensionArchivo = Path.GetExtension(rutaArchivo);
                 extensionArchivo = extensionArchivo.Substring(1, extensionArchivo.Length-1); //quitar punto (carácter 0 del string)
@@ -55,10 +61,12 @@ namespace Manteca_Box_develop
 
                 Texto_Descarga.NavigateUrl = Server.MapPath(rutaArchivo); //Copiamos la ruta del archivo a la URL para descargar
                 Texto_Borra.NavigateUrl = Server.MapPath(rutaArchivo); //Lo mismo para borrar
-                Texto_Borra.Text = idArchivo;
+                Texto_Borra.Text = idArchivo; //Guardamos el id asociado al archivo para cuando llamemos al manejador de la funcion podamos extraerlo del objeto emisor de la señal
             }
         }
-        //Borrará el archivo
+        /*
+         * Esta funcion esta conectada al boton para borrar el archivo
+         */
         protected void Borrar_Click(object sender, EventArgs e)
         {
             LinkButton lb = (LinkButton)sender; //Creamos un linkButton con el objeto emisor(sender)
@@ -66,18 +74,23 @@ namespace Manteca_Box_develop
             string rutaborra = h.NavigateUrl;
             File_EN f_bbdd = new File_EN();
             f_bbdd.ID = Convert.ToInt32(h.Text);
-            FileInfo file = new FileInfo(rutaborra); //Creamos una variable de tipo FileInfo con la ruta del archivo a borrar, 
-                                                     //que se utiliza para proporcionar métodos
-                                                     // y propiedades para borrar entre ot
+            /*
+             * Creamos una variable de tipo FileInfo con la ruta del archivo a borrar, 
+             * que se utiliza para proporcionar métodos
+             * y propiedades para borrar entre otros
+             */
+            FileInfo file = new FileInfo(rutaborra); 
 
             if (file.Exists)
             {
-                file.Delete(); //Borramos el archivo
+                file.Delete(); //Borramos el archivo de la carpeta de nuestro proyecto
                 f_bbdd.BorrarArchivo(); //Borramos el archivo de la base de datos
-                Response.Redirect(Request.Url.AbsoluteUri);
+                Response.Redirect(Request.Url.AbsoluteUri); //Recarga página para refrescar los datos
             }
         }
-        //Descargaremos el archivo con este método
+        /*
+         * Esta funcion esta conectada al boton de descargar
+         */
         protected void Descarga_Boton_Click(object sender, EventArgs e)
         {
             LinkButton lb = (LinkButton)sender;
@@ -86,13 +99,13 @@ namespace Manteca_Box_develop
             FileInfo fi = new FileInfo(rutaDescarga);
             if (fi.Exists)
             {
-                Response.Clear();
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + fi.Name);
+                Response.Clear(); //Limpiamos la salida
+                Response.AddHeader("Content-Disposition", "attachment; filename=\"" + fi.Name + "/"); 
                 Response.AddHeader("Content-Length", fi.Length.ToString());
-                Response.ContentType = "application/octet-stream";
-                Response.Flush();
+                Response.ContentType = "application/octet-stream"; // Con esto le decimos al browser que la salida sera descargable
+                Response.Flush(); // volcamos el stream 
                 Response.TransmitFile(fi.FullName);
-                Response.End();
+                Response.End(); // Enviamos todo el encabezado ahora
             }
         }
     }

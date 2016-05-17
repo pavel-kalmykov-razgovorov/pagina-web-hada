@@ -9,15 +9,15 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["user_session_data"] = null;
+            Session["user_session_data"] = null; //Cuando vas a registrarte, si se habia iniciado sesion, ahora se cierra
         }
 
+        /*
+        * Una vez el usuario se ha introducido con éxito en la base de datos procedemos a 
+        * enviarle el email de confirmacion
+        */
         protected void EnviarCorreoConfirmacion()
         {
-            /*
-             * Una vez el usuario se ha introducido con éxito en la base de datos procedemos a 
-             * enviarle el email de confirmacion
-             */
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");//Creamos el cliente
             smtpClient.Port = 587;//El puerto
             MailMessage message = new MailMessage();//Cremos el menaseje que ahora rellenamos
@@ -50,12 +50,12 @@ namespace Manteca_Box_develop
             }
         }
 
+        /* Una vez el usuario ha rellenado todos los campos solicitados en el apartado del registro
+        * correctamente, es decir, el email tiene formato de email, las contraseñas coinciden...proceemos a
+        * guardar el usuario en la base de datos
+        */
         protected void Button_Register_Click(object sender, EventArgs e)
         {
-            /* Una vez el usuario ha rellenado todos los campos solicitados en el apartado del registro
-             * correctamente, es decir, el email tiene formato de email, las contraseñas coinciden...proceemos a
-             * guardar el usuario en la base de datos
-             */
             EmailExistsError_Register.Visible = 
             UsernameExistsError_Register.Visible = false; //Reiniciamos los errores para que si a la proxima le salen bien no les vuelva a salir
             User_EN busqueda = new User_EN();

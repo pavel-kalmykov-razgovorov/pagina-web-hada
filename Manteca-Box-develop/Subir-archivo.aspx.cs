@@ -37,14 +37,16 @@ namespace Manteca_Box_develop
 
         }
 
-        //Metodo conectado para subir un archivo
+        /*
+        * Este método esta conectado al boton de subir archivo
+        */
         protected void Button_Upload_Click(object sender, EventArgs e)
         {
 
             if (IsPostBack)
             {
                 
-                String path = Server.MapPath("Files/"); //Ruta donde subir el archivo
+                String path = Server.MapPath("Files/"); //Ruta donde subir el archivo (en la carpeta "Files" de nuestro proyecto)
                 if (FileUpload1.HasFile)
                 {
                     try
@@ -57,7 +59,7 @@ namespace Manteca_Box_develop
                             
                             user.LeerUsuario(); //Leemos los datos del usuario
                             arx.Nombre = FileUpload1.FileName;
-                            arx.Propietario = user.ID;
+                            arx.Propietario = user.ID; //El propietario del archivo sera igual al id del usuario
                             int id=arx.SubirArchivo();
                             string pathString = path + "/" + user.ID + "/"; //Se guardara dentro de una carpeta con el id del usuario
                             Directory.CreateDirectory(pathString);

@@ -7,9 +7,12 @@ namespace Manteca_Box_develop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["user_session_data"] = null;
+            Session["user_session_data"] = null; //Cuando vas a iniciar sesion, si se habia iniciado sesion, ahora se cierra
         }
 
+        /*
+         * Esta funcion esta conectada al boton de iniciar sesion 
+         */ 
         protected void Button_Login_Click(object sender, EventArgs e)
         {
             UserNotVerifiedError_Login.Visible = 
@@ -24,7 +27,7 @@ namespace Manteca_Box_develop
                    if (usuario.Verified)
                    {
                         Session["user_session_data"] = usuario; //Creamos una sesion del usuario
-                        Response.Redirect("~/ArchivosUsuario.aspx");
+                        Response.Redirect("~/ArchivosUsuario.aspx"); //Vamos a la pagina de nuestros archivos
                    }
                    else UserNotVerifiedError_Login.Visible = true;
                 }
